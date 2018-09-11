@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{{ Login }}
+{% block header %}
+<!--header content-->
+<div class="topnav">
+    <div class="logo">
+        <h1>Fast Food Fast</h1>
+    </div>
+
+    <ul>
+        <li><a class="active" href="{{ url_for('home') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Signup</a></li>
+        <form class="form">
+            <input type="search" placeholder="Search for a cuisine or dish">
+        </form>
+    </ul>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block bottom %}
+<!--footer content-->
+<div class="bottom">
+    <div id="a">
+        <h3>Fast Food Fast</h3>
+    </div>
+    <div id="b"></div>
+    <div id="c"></div>
+
+
+</div>
+<!--footer content-->
+{% endblock %}
