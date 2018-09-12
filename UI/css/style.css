@@ -1,0 +1,281 @@
+body {
+    background-color: rgba(255, 255, 255, 0.678);
+    background: #f7d794;
+    margin: 0;
+    overflow-x: hidden;
+}
+.topnav{
+    display:flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height:75px;
+    background:#f7d794;
+}
+
+.logo{
+    display: flex;
+    flex:1;
+    margin-left:30px;
+    text-decoration: none;
+    text-decoration-line:none;
+}
+.logo a h1{
+    color:#000000;
+}
+a:link {
+    text-decoration: none;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    float:right;
+}
+
+.form {
+    float: right;
+    margin-right:20px;
+}
+.form input{
+    padding:10px;
+    border-style: none;
+    border-radius: 10px;
+    width: 200px;
+}
+
+ul li {float: left;}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {color: #111;}
+
+@media screen and (max-width: 600px){
+    ul li.right, 
+    ul li {float: none;}
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    height: 100%;
+    background: url('/img/16604.jpg') no-repeat 55%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size:cover;
+
+}
+#headtext{
+    display: flex;
+    flex-direction: row;
+    height:100px;
+}
+#headetext h2{
+    text-align: center;
+    margin:0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#jumbtron{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(252, 247, 247, 0.527);
+    width:800px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+#jumbtron span h2{
+    color: #C93700;
+    font-family: peaalesa, sans-serif;
+    margin-left:20px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    background-color: rgb(41, 38, 38);
+    height:92px;
+    width:100%;
+    bottom: 0;
+}
+
+.bottom #a{
+color:#ffffff;
+margin-left:30px;
+}
+
+
+/******
+signup form
+**************/
+
+/* Add padding to containers */
+.container2 {
+    margin:0 auto;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.589);
+    width:100%;
+    height: auto;
+}.container2 #title, h2{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+}
+form{
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #f1f1f1;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    float:left;
+    margin-left:50px;
+    width:40%;
+    
+}
+.right-side{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right:50px;
+    width:40%;
+}
+/* Full-width input fields */
+input[type=text], input[type=password], select {
+    display:block;
+    width:100%;
+    margin: 5px 0 21px 0;
+    border: none;
+    background: #f1f1f1;
+    height:35px;
+    padding: 2px 0 6px 3px;
+}
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom:10px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    display: flex;
+    flex-direction: row;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width:100%;
+    justify-content: center;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    justify-content: center;
+}
+
+
+/******
+login form
+**************/
+.container3{
+    display:flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    background: url('/img/12809.jpg') no-repeat 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.wrapper{
+    background: rgba(255, 255, 255, 0.478);
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.wrapper form{
+    display: block;
+    background: #ffffff;
+    margin: 0 auto;
+    width: 30%;
+    height: auto;
+    margin-top:50px;
+    margin-bottom: 50px;
+    padding:0 20px 20px 20px;
+    border:1px solid green;
+    border-radius: 20px;
+}
+
+.wrapper form h2{
+    padding:20px 10px 0 0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:30px;
+}
+
+.wrapper label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+}
+.wrapper input[type=text], input[type=password]{
+    display:block;
+    width:100%;
+    margin: 15px 0 21px 0;
+    border: none;
+    background: #f1f1f1;
+    height:35px;
+    padding: 2px 0 6px 5px;
+}
+/* Overwrite default styles of hr */
+.wrapper hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom:10px;
+    width:100%;
+}
+
+
+.wrapper .registerbtn{
+    width:100%;
+}
+
+.wrapper .signin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
