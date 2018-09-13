@@ -2,12 +2,10 @@ body {
     background-color: rgba(255, 255, 255, 0.678);
     background: #f7d794;
     margin: 0;
-    height: 100%; 
-    overflow: hidden; 
+    height: 100%;  
 }
 html{ 
     height: 100%; 
-    overflow: hidden; 
     } 
     
 
