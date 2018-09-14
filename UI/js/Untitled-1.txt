@@ -1,0 +1,84 @@
+ <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Kikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><a href="#" class="viewBtn">Accept</a>
+                                <a class="addBtn" href="#">Reject</a></td>
+                            <td><a href="#" class="viewBtn">Complete</a></td>
+                        </tr>
