@@ -1,12 +1,13 @@
 import unittest
+from unittest import TestCase
 from orders import OnlineRestuarant
 
 
 class OnlineRestuarantTest(unittest.TestCase):
 
-    def setUp(self):
-        # self.register = Registration()
+   
+    def test_welcome(self):
         pass
 
-    def test_get_ordes(self):
+    def test_get_orders(self):
             pass
