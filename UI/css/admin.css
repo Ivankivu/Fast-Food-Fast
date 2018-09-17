@@ -46,8 +46,24 @@
   color:rgb(128, 208, 240);
   font-size:25px;
 }
+.tablecover{
+  width:100%;
+  height:100%;
+  background-color: #ddd;
+ 
+}
+.tablecover table{
+  border:1px solid black;
+  margin:0 auto;
+  top:0;
+  bottom:0;
+}
 
-#admintable{
+.tablecover table thead{
+  background-color:darkgrey;
+}
+
+.admintable{
   display: flex;
   flex-direction: row;
   width:100%;

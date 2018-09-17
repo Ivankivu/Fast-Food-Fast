@@ -9,6 +9,7 @@
     <meta name="keywords" lang="en-us" content="foods, soft drinks, beverages, salads">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <link href="css/userdash.css" rel="stylesheet">
 </head>
 
 <body id="menu">
@@ -19,7 +20,7 @@
                 <h1>Fast Food Fast</h1>
             </a>
         </div>
-       
+
         <ul>
             <li><a class="active" href="login.html">User</a></li>
             <li><a href="login.html">Logout</a></li>
@@ -30,159 +31,122 @@
     <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
     <label for="drawer-toggle" id="drawer-toggle-label"></label>
     <header>Menu
-            <ul>
+        <ul>
+            <form class="form">
+                <input type="search" placeholder="Search for a cuisine or dish">
+            </form>
+        </ul>
+    </header>
+    <nav id="drawer">
+        <ul>
+            <li>
+                <ul>
                     <form class="form">
                         <input type="search" placeholder="Search for a cuisine or dish">
                     </form>
                 </ul>
-    </header>
-    <nav id="drawer">
-        <ul>
-            <li> <ul>
-                    <form class="form">
-                        <input type="search" placeholder="Search for a cuisine or dish">
-                    </form>
-                </ul></li>
-            <li><a href="food.html">FOOD</a></li>
-            <li><a class="active" href="drinks.html">DRINKS</a></li>
-            <li><a href="salads.html">SALADS</a></li>
-            <li><a href="deserts.html">DESERTS</a></li>
-            <li><a href="pastries.html">PASTRIES</a></li>
+            </li>
+            <li><a href="menu.html" class="active">Food Menu</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="profile.html">My account</a></li>
+            <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
     <div class="contain">
-            <aside id="right">
-                <section>
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/12809.jpg">
-                                <img src="../UI/img/12809.jpg" alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Shrimp</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+        <aside id="right">
+            <section>
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="orderhistory.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Order history</h2>
+                            <a href="orderhistory.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/15335.jpg">
-                                <img src="../UI/img/15335.jpg" alt="Forest" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Fruits</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+                </div>
+
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="food.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Dishes</h2>
+                            <a href="food.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/16045.jpg">
-                                <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Whiskey</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+                </div>
+
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="drinks.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Drinks</h2>
+                            <a href="drinks.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/16602.jpg">
-                                <img src="../UI/img/16602.jpg" alt="Mountains" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Vegetables</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+                </div>
+           
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="salads.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Salads</h2>
+                            <a href="salads.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-                    <div class="clearfix"></div>
-                </section>
-                <section>
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/12809.jpg">
-                                <img src="../UI/img/12809.jpg" alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Chicken</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+                </div>
+
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="deserts.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Deserts</h2>
+                            <a href="deserts.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/15335.jpg">
-                                <img src="../UI/img/15335.jpg" alt="Forest" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Chicken</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
+                </div>
+
+                <div class="responsivedash">
+                    <div class="gallerydash">
+                        <a target="_self" href="pastries.html">
+                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
+                        </a>
+                        <div class="descdash">
+                            <h2>Pastries</h2>
+                            <a href="pastries.html" class="viewBtndash">View</a>
                         </div>
                     </div>
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/16045.jpg">
-                                <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                    <h2>Chicken</h2>
-                                    <a href="#" class="viewBtn">View</a>
-                                    <a class="addBtn" href="#">Order</a>
-                                </div>
-                        </div>
-                    </div>
-    
-                    <div class="responsive">
-                        <div class="gallery">
-                            <a target="_blank" href="../UI/img/16602.jpg">
-                                <img src="../UI/img/16602.jpg" alt="Mountains" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                                <h2>Chicken</h2>
-                                <a href="#" class="viewBtn">View</a>
-                                <a class="addBtn" href="#">Order</a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="clearfix"></div>
-                </section>
-    
-            </aside>
-            <aside id="left">
-                    <ul class="verticle-menu">
-                        <li>
-                            <h2></h2>Menu
-                        </li>
-                        <li><a href="">FOOD</a></li>
-                        <li><a href="">DRINKS</a></li>
-                        <li><a href="">SALADS</a></li>
-                        <li><a href="">DESERTS</a></li>
-                        <li><a href="">PASTRIES</a></li>
-                    </ul>
-                </aside>
-    
-    
-    
-    
-        </div>
+                </div>
+                <div class="clearfix"></div>
+            </section>
+
+        </aside>
+        <aside id="left">
+            <ul class="verticle-menu">
+                <li>
+                    <h2></h2>Select Food
+                </li>
+                <li><a href="food.html" class="active">FOOD</a></li>
+                <li><a href="drinks.html">DRINKS</a></li>
+                <li><a href="salads.html">SALADS</a></li>
+                <li><a href="deserts.html">DESERTS</a></li>
+                <li><a href="pastries.html">PASTRIES</a></li>
+            </ul>
+        </aside>
+
+
+
+
+    </div>
 </body>
 
 </html>
