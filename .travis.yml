@@ -8,7 +8,9 @@ install:
 
 # command to run tests
 script:
-  - nosetests -v --with-coverage --cover-package=app
+  - py test_orders.py
+  - coverage run test_orders.py
+  #- nosetests -v --with-coverage --cover-package=app
 
 after_success:
   - coveralls
