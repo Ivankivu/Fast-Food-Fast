@@ -3,60 +3,68 @@
 
 <head>
     <title>Fast Food Fast</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" lang="en-us" content="foods, soft drinks, beverages, salads">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../UI/css/style.css" rel="stylesheet">
+    <link href="../UI/css/menu.css" rel="stylesheet">
 </head>
 
 <body>
     <!--header content-->
     <div class="topnav">
         <div class="logo">
-            <a href="index.html"><h1>Fast Food Fast</h1></a>
+            <a href="index.html">
+                <h1>Fast Food Fast</h1>
+            </a>
         </div>
-
         <ul>
             <li><a class="active" href="login.html">Login</a></li>
             <li><a href="signup.html">Signup</a></li>
-            <form class="form">
-                <input type="search" placeholder="Search for a cuisine or dish">
-            </form>
         </ul>
-
     </div>
-
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <header>Menu
+    </header>
+    <nav id="drawer">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+        </ul>
+    </nav>
     <!--header content-->
-
     <!--main content-->
     <div class="container">
-        <div id="headtext">
-
-
-        </div>
         <div class="jumbtron">
-            <span>
-                <h2>Make your order right here online!</h2>
-            </span>
-            <div>
+            <div id="can">
+                <div id="mainp">
+                    <span>
+                        <h2>Order take away or delivery food!</h2>
+                    </span>
+                    <form class="form">
+                        <input type="search" placeholder="Search for a cuisine or dish">
+                    </form>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li>
+                            <h3><span>500</span>&nbsp;Restaurants&nbsp;&nbsp;|&nbsp;&nbsp;</h3>
+                        </li>&nbsp;&nbsp;
+                        <li>
+                            <h3><span>500</span>&nbsp;People Served&nbsp;&nbsp;|&nbsp;&nbsp;</h3>
+                        </li>&nbsp;&nbsp;
+                        <li>
+                            <h3><span>500</span>&nbsp;Registered Users&nbsp;&nbsp;|&nbsp;&nbsp;</h3>
+                        </li>&nbsp;&nbsp;
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
-
-
     <!--footer content-->
-    <div class="bottom">
-        <div id="a">
-            <h3>Fast Food Fast</h3>
-        </div>
-        <div id="b"></div>
-        <div id="c"></div>
 
-
-    </div>
     <!--footer content-->
 </body>
 

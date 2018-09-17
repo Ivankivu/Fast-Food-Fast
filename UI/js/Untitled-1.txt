@@ -82,3 +82,46 @@
                                 <a class="addBtn" href="#">Reject</a></td>
                             <td><a href="#" class="viewBtn">Complete</a></td>
                         </tr>
+
+
+ <section class="right-side">
+                    <!-- <!-- <section class="right-side"> -->
+                    <h2>Address Information</h2>
+                    <hr>
+                    <label for="cname"><b>City</b></label>
+                    <select placeholder="Select City name" name="cname" required>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                        <option>kampala</option>
+                    </select>
+                    `
+                    <label for="tname"><b>First name</b></label>
+                    <select placeholder="Select Town name" name="tname" required>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                        <option>kamwokya</option>
+                    </select>
+
+                    <label for="sname"><b>Street name</b></label>
+                    <input type="text" placeholder=" Enter Street name" name="sname" required>
+
+                    <label for="bnumber"><b>Block number</b></label>
+                    <input type="text" placeholder=" Enter Block number" name="name" required>
+                    `
+                    <label for="sname"><b>Additional Details(<span><i>optional</i></span>)</b></label>
+                    <textarea type="textarea" placeholder="Add more info.." name="sname" required rows="8"></textarea>
+                    </section>

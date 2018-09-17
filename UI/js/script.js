@@ -48,8 +48,8 @@ function add_row()
  "</td><td id='type_row"+table_len+"'>"+new_type+
  "</td><td id='status_row"+table_len+"'>"+new_status+
  "</td><td><input type='button' id='edit_button"+table_len+
- "' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+
- "' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+ "'value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+
+ "'value='Save' class='save' onclick='save_row("+table_len+")'></td><td> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
 
  document.getElementById("new_name").value="";
  document.getElementById("new_type").value="";
@@ -71,6 +71,85 @@ if (tbl != null) {
     }
 }
 
-//var row = document.getElementsByClassName("completed");
+// login modal block
+function set_background() {
+    myBody = document.getElementsByTagName("body")[0];
+    myBodyElements = myBody.getElementsByTagName("p");
+    myP = myBodyElements[1];
+    myP.style.background = "rgb(255,0,0)";
+  }
+var modal = document.getElementById('loginModal');
+var btn = document.getElementById("loginbtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+span.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// login modal block
 
 
+// signup modal block
+function set_background() {
+    myBody = document.getElementsByTagName("body")[0];
+    myBodyElements = myBody.getElementsByTagName("p");
+    myP = myBodyElements[1];
+    myP.style.background = "rgb(255,0,0)";
+  }
+var modal = document.getElementById('signupModal');
+var btn = document.getElementById("signupbtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+span.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+$('.like-btn').on('click', function() {
+    $(this).toggleClass('is-active');
+ });
+
+ $('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &amp;gt; 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+  $input.val(value);
+ 
+});
+ 
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &amp;lt; 100) {
+        value = value + 1;
+    } else {
+        value =100;
+    }
+ 
+    $input.val(value);
+});

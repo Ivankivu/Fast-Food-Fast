@@ -52,10 +52,9 @@
   flex-direction: row;
   width:100%;
   height:100%;
-  margin-top:-450px;
   background-color: #ddd;
   
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 #admintable table {
@@ -78,6 +77,8 @@ tr:nth-child(even) {
 #data_table tr td input{
   border:1px solid blue;
   position: sticky;
+  border-color: #534a35;
+  border-radius: 10px;
 }
 
 .edit{
@@ -109,4 +110,53 @@ tr:nth-child(even) {
   width:100px;
   margin-top:-100px;
   background-color:grey;
+}
+
+#new_name,#new_type,#new_status{
+  border-color: #534a35;
+  background-color: #f7d794;
+}
+
+#new_name:focus-visible,#new_type:focus-visible,#new_status:focus-visible{
+  border-radius: 10px;
+  border-color: #534a35;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+   overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

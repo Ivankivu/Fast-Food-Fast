@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" lang="en-us" content="foods, soft drinks, beverages, salads">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
 </head>
 
 <body id="login-page">
@@ -20,16 +21,21 @@
 
         <ul>
             <li><a class="active" href="login.html">Login</a></li>
-            <li><a href="signup.html">Signup</a></li>               
-            <form class="form">
-                <input type="search" placeholder="Search for a cuisine or dish">
-            </form>
+            <li><a href="signup.html">Signup</a></li> 
         </ul>
-
     </div>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+        <header>Menu
+        </header>
+        <nav id="drawer">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
     <div class="container3">
-<div class="wrapper">
-    <form action="menu.html" id="form1">
+    <form id="form1" action="">
         <h2>Login</h2>
         <hr>
         <label for="username">Username:</label>
@@ -38,7 +44,7 @@
         <label for="Password">Password:</label>
         <input type="password" name="password" placeholder="********" required>
 
-        <button type="submit" class="registerbtn"   form="form1" value="Submit">Register</button>
+        <input type="submit" class="registerbtn" value="Login" onclick="window.location.href = 'menu.html';">
         <hr>
         <div class="signin">
                 <p>Don't have an account? <a href="signup.html">Signup</a>.</p>
@@ -47,9 +53,6 @@
     </form>
 
 </div>
-
-
-    </div>
 
     
 </body>
