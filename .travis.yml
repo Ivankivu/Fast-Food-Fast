@@ -10,9 +10,19 @@ install:
   - pip install -r requirements.txt
   - pip install codecov
 
+  env:
+  global:
+    - CC_TEST_REPORTER_ID=864f00b7e432437250a4405e58cedf1962c7c7c22854f85d193ef31c9ea247c7
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script: 
   - python v1/test_orders.py
   - coverage run v1/test_orders.py
+  - cd v1
   - nosetests --with-coverage --cover-package=tests
 
 after_success:

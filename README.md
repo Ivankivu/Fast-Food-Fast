@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/Ivankivu/Fast-Food-Fast/badge.svg?branch=feature)](https://coveralls.io/github/Ivankivu/Fast-Food-Fast?branch=feature)
+[![Build Status](https://travis-ci.org/Ivankivu/Fast-Food-Fast.svg?branch=getallorders)](https://travis-ci.org/Ivankivu/Fast-Food-Fast)
 
 # Fast-Food-Fast
 

@@ -19,5 +19,5 @@ class OnlineRestuarant():
         else:
             return make_response(jsonify({"orders": orderlist}), 200)
 
-    if __name__ == '__main__':
-        restuarant.run(debug=True, port=5000)
+if __name__ == '__main__':
+    restuarant.run(debug=True, port=5000)
