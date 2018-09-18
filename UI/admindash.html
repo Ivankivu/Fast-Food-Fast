@@ -4,7 +4,7 @@
 <head>
     <title>Fast Food Fast-Signup</title>
     <meta charset="UTF-8">
-    <meta name="deletport" content galley="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content galley="width=device-width,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content galley="IE=edge">
     <meta name="keywords" lang="en-us" content galley="foods, soft drinks, beverages, salads">
     <link href="css/style.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     <nav id="drawer">
         <ul>
             <li><a href="admincatalog.html">Catalogue</a></li>
-            <li><a class="active" href="admindash.html">delet Orders</a></li>
+            <li><a class="active" href="admindash.html">save Orders</a></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
@@ -48,7 +48,7 @@
                     <li class="img_bag"><img src="/UI/img/icons/Home_520px.png"></li>
                     <li class="tcounts">
                         <h5 class="titles">Total Orders</h5>
-                        <h2 class="count">0</h2>
+                        <h2 class="count">8</h2>
                     </li>
                 </ul>
 
@@ -56,7 +56,7 @@
                     <li class="img_bag"><img src="/UI/img/icons/Thumbs_Up_520px.png"></li>
                     <li class="tcounts">
                         <h5 class="titles">Active Orders</h5>
-                        <h2 class="count">0</h2>
+                        <h2 class="count">5</h2>
                     </li>
                 </ul>
 
@@ -64,16 +64,15 @@
                     <li class="img_bag"><img src="/UI/img/icons/Thumbs_Down_520px.png"></li>
                     <li class="tcounts">
                         <h5 class="titles">Cancelled Orders</h5>
-                        <h2 class="count">0</h2>
+                        <h2 class="count">3</h2>
                     </li>
                 </ul>
 
 
             </div>
             <div id="admintable">
-
-                <table id="tblorders">
-                    <thead>
+                <table id="data_table">
+                    <tr>
                         <th>ID</th>
                         <th >dishes</th>
                         <th>Qty</th>
@@ -84,8 +83,7 @@
                         <th>Status</th>
                         <th>Action</th>
                         <th></th>
-                    </thead>
-                    <tbody>
+                    </tr>
                         <tr>
                             <td>1</td>
                             <td class="dishes">KKikomando</td>
@@ -94,9 +92,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -106,9 +104,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -118,9 +116,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -130,9 +128,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -142,9 +140,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr >
                             <td>1</td>
@@ -154,9 +152,9 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -166,11 +164,10 @@
                             <td>0783451234</td>
                             <td>Central</td>
                             <td>Makindye</td>
-                            <td><input type="submit" class="acceptBtn" value="Accept"></td>
-                            <td><input type="submit" class="rejectBtn" value="Reject"></td>
-                            <td><input type="submit" class="completed" onclick="set_background()" value="Complete"></td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
         </aside>
@@ -179,11 +176,8 @@
                 <li>
                     <h2></h2>Menu
                 </li>
-                <li><a href="admincatalog.html">Catakogue</a></li>
-                <li><a href="">DRINKS</a></li>
-                <li><a href="">SALADS</a></li>
-                <li><a href="">DESERTS</a></li>
-                <li><a href="">PASTRIES</a></li>
+                <li><a href="admincatalog.html">Catalogue</a></li>
+                <li><a href="admindash.html">View Orders</a></li>
             </ul>
         </aside>
     </div>

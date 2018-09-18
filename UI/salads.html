@@ -30,20 +30,10 @@
     <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
     <label for="drawer-toggle" id="drawer-toggle-label"></label>
     <header>Menu
-        <ul>
-            <form class="form">
-                <input type="search" placeholder="Search for a cuisine or dish">
-            </form>
-        </ul>
     </header>
     <nav id="drawer">
         <ul>
             <li>
-                <ul>
-                    <form class="form">
-                        <input type="search" placeholder="Search for a cuisine or dish">
-                    </form>
-                </ul>
             </li>
             <li><a href="menu.html">Food Menu</a></li>
             <li><a href="orderhistory.html">Order History</a></li>
@@ -56,22 +46,49 @@
         <aside id="right">
             <section>
                     <div id="myModal" class="modal">
-
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <p>Some text in the Modal..</p>
-                            </div>
-        
+                            <div class="shopping-cart">
+                                    <span class="close"></span>
+                                <!-- Title -->
+                                <div class="title">
+                                  Checkout cart
+                                </div>
+                               
+                                <!-- Product #1 -->
+                                <div class="item">
+                                  <div class="buttons">
+                                    <span class="delete-btn"></span>
+                                    <span class="like-btn"></span>
+                                  </div>
+                               
+                                  <div class="image">
+                                    <img src="../UI/img/12809.jpg" alt="" width="150" height="100"/>
+                                  </div>
+                               
+                                  <div class="description">
+                                    <span>Shrimps</span>
+                                  </div>
+                               
+                                  <div class="quantity">
+                                    <button class="plus-btn" type="button" name="button">
+                                      <img src="../UI/img/icons/plus.svg" alt="" />
+                                    </button>
+                                    <input type="text" name="name" value="1">
+                                    <button class="minus-btn" type="button" name="button">
+                                      <img src="../UI/img/icons/minus.svg" alt="" />
+                                    </button>
+                                  </div>
+                               
+                                  <div class="total-price">17000 Ushs</div>
+                                </div>
+                              </div>        
                         </div>
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/12809.jpg">
-                            <img src="../UI/img/12809.jpg" alt="Cinque Terre" width="600" height="400">
+                        <a target="_self" href="#">
+                            <img src="../UI/img/salads/download.jpg" alt="Cinque Terre" width="600" height="350">
                         </a>
                         <div class="desc">
                             <h2>Shrimp</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -80,12 +97,11 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/15335.jpg">
-                            <img src="../UI/img/15335.jpg" alt="Forest" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/download(1).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Fruits</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -93,12 +109,11 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/16045.jpg">
-                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images(1).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Whiskey</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -106,12 +121,11 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/16602.jpg">
-                            <img src="../UI/img/16602.jpg" alt="Mountains" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images(2).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Vegetables</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -122,12 +136,11 @@
             <section>
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/12809.jpg">
-                            <img src="../UI/img/12809.jpg" alt="Cinque Terre" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images(3).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Chicken</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -136,12 +149,11 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/15335.jpg">
-                            <img src="../UI/img/15335.jpg" alt="Forest" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images(4).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Chicken</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -149,12 +161,11 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/16045.jpg">
-                            <img src="../UI/img/16045.jpg" alt="Northern Lights" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images(5).jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Chicken</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
@@ -162,25 +173,22 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="../UI/img/16602.jpg">
-                            <img src="../UI/img/16602.jpg" alt="Mountains" width="600" height="400">
-                        </a>
+                            <a target="_self" href="#">
+                                    <img src="../UI/img/salads/images.jpg" alt="Cinque Terre" width="600" height="350">
+                                </a>
                         <div class="desc">
                             <h2>Chicken</h2>
-                            <a href="#" class="viewBtn">View</a>
                             <a class="addBtn" href="#">Order</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
             </section>
-
         </aside>
         <aside id="left">
             <ul class="verticle-menu">
                 <li>
-                    <h2></h2>Menu
+                        <h2>Menu</h2>
                 </li>
                 <li><a href="food.html">FOOD</a></li>
                 <li><a href="drinks.html">DRINKS</a></li>
@@ -189,10 +197,6 @@
                 <li><a href="pastries.html">PASTRIES</a></li>
             </ul>
         </aside>
-
-
-
-
     </div>
     <script src="../UI/js/script.js"></script>
 </body>
