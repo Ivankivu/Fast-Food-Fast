@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Fast Food Fast-Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content galley="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content galley="IE=edge">
+    <meta name="keywords" lang="en-us" content galley="foods, soft drinks, beverages, salads">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+
+</head>
+
+<body id="menu">
+    <!--header content galley-->
+    <div class="topnav">
+        <div class="logo">
+            <a href="index.html">
+                <h1>Fast Food Fast</h1>
+            </a>
+        </div>
+
+        <ul>
+            <li><a class="active" href="login.html">Welcome, Admin</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <header>Menu
+    </header>
+    <nav id="drawer">
+        <ul>
+            <li><a href="admincatalog.html">Catalogue</a></li>
+            <li><a class="active" href="admindash.html">save Orders</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="contain">
+        <aside id="right">
+            <div id="adminbar">
+                <ul class="listadd">
+                    <li class="img_bag"><img src="/UI/img/icons/Home_520px.png"></li>
+                    <li class="tcounts">
+                        <h5 class="titles">Total Orders</h5>
+                        <h2 class="count">8</h2>
+                    </li>
+                </ul>
+
+                <ul class="listadd">
+                    <li class="img_bag"><img src="/UI/img/icons/Thumbs_Up_520px.png"></li>
+                    <li class="tcounts">
+                        <h5 class="titles">Active Orders</h5>
+                        <h2 class="count">5</h2>
+                    </li>
+                </ul>
+
+                <ul class="listadd">
+                    <li class="img_bag"><img src="/UI/img/icons/Thumbs_Down_520px.png"></li>
+                    <li class="tcounts">
+                        <h5 class="titles">Cancelled Orders</h5>
+                        <h2 class="count">3</h2>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div id="admintable">
+                <table id="data_table">
+                    <tr>
+                        <th>ID</th>
+                        <th >dishes</th>
+                        <th>Qty</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th></th>
+                    </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr >
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="dishes">KKikomando</td>
+                            <td>2</td>
+                            <td>Ivan Kivumbi</td>
+                            <td>0783451234</td>
+                            <td>Central</td>
+                            <td>Makindye</td>
+                            <td><input type="submit" class="acceptBtn edit" value="Accept"></td>
+                            <td><input type="submit" class="rejectBtn delete" value="Reject"></td>
+                            <td><input type="submit" class="completed save" onclick="set_background()" value="Complete"></td>
+                        </tr>
+                </table>
+            </div>
+        </aside>
+        <aside id="left">
+            <ul class="verticle-menu">
+                <li>
+                    <h2></h2>Menu
+                </li>
+                <li><a href="admincatalog.html">Catalogue</a></li>
+                <li><a href="admindash.html">View Orders</a></li>
+            </ul>
+        </aside>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+    </script>
+</body>
+</html>
