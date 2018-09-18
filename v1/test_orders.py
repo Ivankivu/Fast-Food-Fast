@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
-import v1.views.orders
-from orders import OnlineRestuarantTest
+import orders
+from orders import OnlineRestuarant
 
 
 class OnlineRestuarantTest(unittest.TestCase):
