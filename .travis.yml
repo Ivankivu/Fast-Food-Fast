@@ -8,13 +8,12 @@ python:
 
 cache: pip
 install: 
-  - pip install unittest
   - pip install -r requirements.txt
   - pip install codecov
 
 script: 
   - coverage run v1/tests/test_orders.py
-  - python -m unittest v1/tests/test_orders.py
+  - python v1/tests/test_orders.py
 
 after_success:
   - codecov
