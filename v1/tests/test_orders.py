@@ -1,6 +1,6 @@
 import unittest
 from unittest import TestCase
-from orders import OnlineRestuarant
+from views.orders import OnlineRestuarant
 
 
 class OnlineRestuarantTest(unittest.TestCase):
@@ -10,3 +10,7 @@ class OnlineRestuarantTest(unittest.TestCase):
 
     def test_get_orders(self):
         pass
+
+
+if __name__ == '__main__':
+    unittest.main()
