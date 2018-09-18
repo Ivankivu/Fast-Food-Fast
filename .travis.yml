@@ -11,7 +11,6 @@ install:
   - pip install codecov
 
 script: 
-  - coverage run v1/tests/test_orders.py
   - python v1/tests/test_orders.py
   - nosetests --with-coverage --cover-package=tests
 
