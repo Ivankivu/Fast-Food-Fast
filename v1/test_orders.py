@@ -1,16 +1,20 @@
 import unittest
+from flask import Flask, jsonify
 from unittest import TestCase
 import orders
-from orders import OnlineRestuarant
+from orders import OnlineRestuarant, orderlist
 
 
 class OnlineRestuarantTest(unittest.TestCase):
 
     def test_welcome(self):
-        pass
+        self.assertTrue(True)
 
     def test_get_orders(self):
-        pass
+        if orderlist == []:
+            raise ValueError("orders not found", 404)
+        else:
+            self.assertTrue(True)
 
 
 if __name__ == '__main__':

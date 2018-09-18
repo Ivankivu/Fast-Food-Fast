@@ -8,9 +8,6 @@ orderlist = ["u can see me"]
 
 class OnlineRestuarant():
 
-    def __init__():
-        pass
-
     @restuarant.route("/api/v1/", methods=["GET"])
     def welcome():
         return jsonify({"message": "You are most welcome!"})
