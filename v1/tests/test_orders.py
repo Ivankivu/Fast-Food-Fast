@@ -1,6 +1,5 @@
 import unittest
 from unittest import TestCase
-from views.orders import OnlineRestuarant
 
 
 class OnlineRestuarantTest(unittest.TestCase):
