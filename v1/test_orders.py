@@ -12,7 +12,7 @@ class OnlineRestuarantTest(unittest.TestCase):
 
     def test_get_orders(self):
         if orderlist == []:
-            raise ValueError("orders not found", 404)
+            raise ValueError("orders not found")
         else:
             self.assertTrue(True)
 
