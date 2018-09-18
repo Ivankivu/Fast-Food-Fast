@@ -13,7 +13,6 @@ install:
 script: 
   - coverage run v1/tests/test_orders.py
   - python v1/tests/test_orders.py
-  - cd API
   - nosetests --with-coverage --cover-package=tests
 
 after_success:
