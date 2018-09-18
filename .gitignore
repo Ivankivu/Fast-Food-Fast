@@ -93,7 +93,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+v1/htmlcov
+v1/.pytest_cache
 # Spyder project settings
 .spyderproject
 .spyproject

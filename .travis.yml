@@ -22,8 +22,7 @@ before_script:
 script: 
   - python v1/test_orders.py
   - coverage run v1/test_orders.py
-  - cd v1
-  - nosetests --with-coverage --cover-package=tests
+  - nosetests --with-coverage --cover-package=v1
 
 after_success:
   - codecov
