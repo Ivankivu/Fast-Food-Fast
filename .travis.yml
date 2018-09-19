@@ -9,7 +9,6 @@ cache: pip
 install: 
   - pip install -r requirements.txt
   - pip install codecov
-  - pip install coveralls
 
   env:
    - CODECLIMATE_REPO_TOKEN=6839ca4633717edc8d7da07147286b3a2840ec13
@@ -23,10 +22,8 @@ before_script:
 
 script: 
   - python v1/tests/test_orders.py
-  - pytest v1/tests --cov=app --cov-report
+  - pytest v1/tests --cov=v1 --cov-report
 
 after_success:
-  - coverage combine
-  - cat .coverage
   - codecov
   - coveralls
