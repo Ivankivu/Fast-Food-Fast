@@ -1,4 +1,6 @@
-from flask import Flask, jsonify, make_response
+from flask import Flask, request, jsonify, json, make_response, Blueprint
+
+od = Blueprint('orders', __name__)
 
 restuarant = Flask(__name__)
 
@@ -18,6 +20,3 @@ class OnlineRestuarant():
             return "orders not found", 404
         else:
             return make_response(jsonify({"orders": orderlist}), 200)
-
-if __name__ == '__main__':
-    restuarant.run(debug=True, port=5000)
