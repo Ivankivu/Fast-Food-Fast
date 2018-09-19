@@ -37,4 +37,4 @@ $ pip install -r requirements.txt
 
 Run the server At the terminal or console type
 
-$ Python manage.py
+$ Python run.py
