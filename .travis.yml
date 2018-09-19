@@ -1,9 +1,9 @@
-sudo: false
-
 language: python
 
 python:
-  - 3.6
+  -"3.6"
+  -"3.7"
+  -"3.7.0"
 
 cache: pip
 install: 
@@ -22,7 +22,6 @@ before_script:
 
 script: 
   - python v1/tests/test_orders.py
-  - pytest v1/tests --cov=v1 --cov-report
 
 after_success:
   - codecov
