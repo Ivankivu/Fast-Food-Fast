@@ -2,6 +2,7 @@ language: python
 
 python:
   - 3.6
+  - 3.7
 
 cache: pip
 install: 
@@ -11,8 +12,9 @@ install:
 
 script: 
   - pytest v1/tests/test_orders.py
-  - coverage run v1/tests/test_orders.py
+  -  py.test --cov-report html --cov [v1] --verbose
 
 after_success:
+  - coverage report -m
   - codecov
   - coveralls
