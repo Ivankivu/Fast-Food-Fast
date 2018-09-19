@@ -2,26 +2,16 @@ language: python
 
 python:
   -"3.6"
-  -"3.7"
-  -"3.7.0"
 
 cache: pip
 install: 
   - pip install -r requirements.txt
   - pip install codecov
 
-  env:
-   - CODECLIMATE_REPO_TOKEN=6839ca4633717edc8d7da07147286b3a2840ec13
-  global:
-    - CC_TEST_REPORTER_ID=864f00b7e432437250a4405e58cedf1962c7c7c22854f85d193ef31c9ea247c7
-
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 
 script: 
   - python v1/tests/test_orders.py
+  - coverage run v1/tests/test_orders.py
 
 after_success:
   - codecov
