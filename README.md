@@ -8,9 +8,9 @@ Fast-Food-Fast is a food delivery service app for a restaurant
 
 ## Built-with
 
-Python3.6 - Programming language that lets you work more dynamically
-Flask - Python based web framework thats rich with dependecy support
-Virtualenv - A virtual environment for Running the tests
+* Python3.6 - Programming language that lets you work more dynamically
+* Flask - Python based web framework thats rich with dependecy support
+* Virtualenv - A virtual environment for Running the tests
 
 To get started in order to run tests, use this command below in your terminal
 
