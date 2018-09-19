@@ -10,7 +10,7 @@ install:
 
 
 script: 
-  - python v1/tests/test_orders.py
+  - pytest v1/tests/test_orders.py
   - coverage run v1/tests/test_orders.py
 
 after_success:
