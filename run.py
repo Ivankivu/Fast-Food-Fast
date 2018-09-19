@@ -1,3 +1,4 @@
 from v1.views.orders import restuarant
 
-restuarant.run(debug=True)
+if __name__ == '__main__':
+    restuarant.run(debug=True)
