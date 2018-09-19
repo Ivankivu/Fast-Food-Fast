@@ -1,8 +1,7 @@
 from flask import Flask, request, jsonify, json, make_response, Blueprint
+from v1 import restuarant
 
 od = Blueprint('orders', __name__)
-
-restuarant = Flask(__name__)
 
 
 orderlist = ["u can see me"]
