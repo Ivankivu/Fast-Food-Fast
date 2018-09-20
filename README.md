@@ -21,13 +21,14 @@ pytest -v --with-coverage
 Clone this Repository
 
 $ https://github.com/Ivankivu/Fast-Food-Fast.git
+
 $ cd Fast-Food-Fast
 
 Create virtual environment and install it
 
 $ virtualenv --python=python3 env
 $ source /env/Scripts/
-$source activate
+$ source activate
 
 Install all the necessary dependencies by
 
