@@ -22,7 +22,8 @@ before_script:
 
 script: 
   - pytest v1/tests/test_orders.py
-  - py.test --cov-report html --cov [v1] --verbose
+  - coverage run v1/test_orders.py
+  - nosetests --with-coverage --cover-package=tests
 
 after_success:
   - coverage report -m
