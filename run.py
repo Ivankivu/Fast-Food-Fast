@@ -1,5 +1,5 @@
 from flask import Flask
-from v1.views.orders import restuarant
+from v1.views.orders import app
 
 
-restuarant.run(debug=True)
+app.run(debug=True)

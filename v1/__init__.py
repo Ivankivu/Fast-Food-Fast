@@ -1,4 +1,4 @@
 from flask import Flask
-from v1.views.orders import restuarant
+from v1.views.orders import app
 
-restuarant.register_blueprint(views.orders.od, url_prefix='/api/v1')
+app.register_blueprint(views.orders.od, url_prefix='/api/v1')
