@@ -38,4 +38,4 @@ $ pip install -r requirements.txt
 
 Run the server At the terminal or console type
 
-$ Python run.py
+$ Python app.py
