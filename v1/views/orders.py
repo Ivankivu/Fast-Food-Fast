@@ -20,5 +20,15 @@ class OnlineRestuarant():
         else:
             return make_response(jsonify({"orders": orderlist}), 200)
 
+    @app.route("/api/orders/<order_id>/", methods=["POST"])
+    def add_order():
+        order = {"Order_id": request.json["order_id"], "Type": request.json[Type], "Amount": request.json["name"]}
+        for order_id in order:
+            if order["order_id"] == order_id:
+                return "order already exists"
+            
+        orderlist.append(order.json())
+        return jsonify({"order": order}), 200
+
 if __name__ == '__main__':
     app.run(debug=True)
