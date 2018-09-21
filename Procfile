@@ -1,1 +1,1 @@
-web: gunicorn -w 4 orders:app
+web: gunicorn -w 4 app:app
