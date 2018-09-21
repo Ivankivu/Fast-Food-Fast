@@ -1,6 +1,5 @@
-from flask import Flask, request, jsonify, json, make_response, Blueprint
+from flask import Flask, request, jsonify, json, make_response
 
-od = Blueprint('orders', __name__)
 
 app = Flask(__name__)
 
