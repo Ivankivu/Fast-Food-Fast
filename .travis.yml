@@ -24,8 +24,8 @@ script:
   - pytest --cov=v1
   - pytest v1/tests/test_orders.py
   - coverage run v1/test_orders.py
+  - nosetests --with-coverage --cover-package=views
   - nosetests --with-coverage --cover-package=tests
-
 after_success:
   - coverage report -m
   - codecov
