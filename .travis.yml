@@ -13,8 +13,6 @@ install:
 script: 
   - pytest --cov=main
   - coverage run main/tests/test_orders.py
-  - py.test --cov-report html --cov [main] --verbose
-  # - nosetests --with-coverage --cover-package=main
   
 after_success:
   - coverage report -m
