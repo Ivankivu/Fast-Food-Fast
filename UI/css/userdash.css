@@ -1,0 +1,50 @@
+.gallerydash {
+    border: 1px solid #ccc;
+    margin-top:15px;
+    background:#ccc;
+    border-radius: 10px;
+    padding-bottom:30px;
+}
+
+.gallerydash:hover {
+    border: 1px solid #777;
+}
+
+.gallerydash img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius:10px; 
+    border-top-right-radius:10px; 
+}
+.descdash h2{
+    margin-top:-40px;
+    padding-bottom:20px;
+}
+.descdash {
+    color:#534a35;
+    text-decoration:none;
+    text-align: center;
+    margin-top:40px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsivedash {
+    padding: 6px;
+    float: left;
+    width: 30%;
+    margin:5px;
+}
+
+.viewBtndash{
+    width:300px;
+    border:1px solid green;
+    border-radius: 5px;
+    padding:10px;
+    color: #f7d794;
+    text-decoration:none;
+    background: green;
+   
+}
