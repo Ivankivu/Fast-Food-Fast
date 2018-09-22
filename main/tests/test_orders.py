@@ -1,8 +1,6 @@
 import unittest
-from flask import Flask, jsonify
 from unittest import TestCase
-from main.views.orders import OnlineRestuarant, orderlist
-
+from views.orders import order_id,orderlist, OnlineRestuarant
 
 class OnlineRestuarantTest(unittest.TestCase):
 
