@@ -1,6 +1,6 @@
 from flask import Flask
-from views import orders
-from views.orders import app
+from main.views import orders
+from main.views.orders import app
 
 if __name__ == '__main__':
     app.run(debug=True)
