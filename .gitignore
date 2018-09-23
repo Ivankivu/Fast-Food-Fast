@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+v1/__pycache__
 *.py[cod]
 *$py.class
 
@@ -43,6 +44,7 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .coverage
+v1/.coverage
 .coverage.*
 .cache
 nosetests.xml
@@ -86,14 +88,19 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
+.settings/
+.settings
+home/
 .env
 .venv
 env/
 venv/
+v1/env
 ENV/
 env.bak/
 venv.bak/
-
+v1/htmlcov
+v1/.pytest_cache
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -108,3 +115,4 @@ venv.bak/
 .mypy_cache/
 
 node_modules/
+v1/.pytest_cache
