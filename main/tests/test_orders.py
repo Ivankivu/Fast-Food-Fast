@@ -1,6 +1,5 @@
 import unittest
 from unittest import TestCase
-<<<<<<< HEAD
 from main.views.orders import OnlineRestuarant, orderlist
 from main.config import app_config
 from main.views.orders import app
@@ -47,25 +46,12 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.assertEqual(order1.available_code,201)
         self.assertIn('"order_id":9',str(order1.data))
 
-=======
-from views.orders import order_id,orderlist, OnlineRestuarant
-
-class OnlineRestuarantTest(unittest.TestCase):
-
->>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
     def test_welcome(self):
         self.assertTrue(True)
 
     def test_get_orders(self):
-<<<<<<< HEAD
         raise ValueError("orders not found")
        
-=======
-        if orderlist == []:
-            raise ValueError("orders not found")
-        else:
-            self.assertTrue(True)
->>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
 
     def test_not_found(self):
         pass

@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, json, make_response, Response, abort, make_response
-<<<<<<< HEAD
 from main.controllers.new_order import Order
 
 
@@ -10,44 +9,6 @@ orderlist = Order(12,'oio',455,True).list_order()
 class OnlineRestuarant():
     
 
-=======
-
-app = Flask(__name__)
-
-JSON_MIME_TYPE = 'application/json'
-
-orderlist = [
-                {'order_id': 10,'Food': 'Rice', 'Amount': 1500, 'Available': False},
-                    {'order_id': 12, 'Food': 'matooke', 'Amount': 3000, 'Available': True}
-                ]
-Available = bool
-Amount = float
-order_id = int
-food = str
-order  = "order"
-
-{"order" : {"order_id": order_id, 
-                        "Food": food, 
-                        "Amount": Amount, 
-                        "Available": Available
-                            }}
-
-class OnlineRestuarant():
-
-    def find_order(order, order_id):
-        for order in orderlist:
-            if int(order['order_id']) == order_id:
-                return order
-
-
-    def json_response(data='', status=200, headers=None):
-        headers = headers or {}
-        if 'Content-Type' not in headers:
-            headers['Content-Type'] = JSON_MIME_TYPE
-
-        return make_response(data, status, headers)
-    
->>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
     @app.route("/", methods=["GET"])
     def Home():
         return '''
@@ -66,7 +27,6 @@ class OnlineRestuarant():
         if orderlist == []:
             return "orders not found", 404
 
-<<<<<<< HEAD
         
         return jsonify({'orders':orderlist}), 200
 
@@ -119,11 +79,6 @@ class OnlineRestuarant():
 
        orderlist.remove(od[0])
        return jsonify({'orderlist': orderlist}),200
-=======
-        response = Response(
-            json.dumps(orderlist), status=200)
-        return response
->>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
 
     @app.errorhandler(404)
     def not_found(e):
@@ -131,7 +86,3 @@ class OnlineRestuarant():
 
 if __name__ == '__main__':
     app.run(debug=True)
-<<<<<<< HEAD
-
-=======
->>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
