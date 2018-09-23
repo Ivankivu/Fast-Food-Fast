@@ -8,11 +8,22 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
   - pip install codecov
+<<<<<<< HEAD
 
 script: 
   - pytest -v --cov main --cov-report term-missing
   
 after_success:
   - coverage report
+=======
+  - pip install nose
+
+script: 
+  - pytest --cov=main
+  - coverage run main/tests/test_orders.py
+  
+after_success:
+  - coverage report -m
+>>>>>>> 70838b1f4833eb716d3a0920b1da4995ae9e804a
   - codecov
   - coveralls
