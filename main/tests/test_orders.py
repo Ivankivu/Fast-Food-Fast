@@ -71,9 +71,6 @@ class OnlineRestuarantTest(unittest.TestCase):
 
         self.assertTrue(True)
 
-    def test_get_orders(self):
-        raise ValueError("orders not found")
-
 
 if __name__ == '__main__':
     unittest.main()
