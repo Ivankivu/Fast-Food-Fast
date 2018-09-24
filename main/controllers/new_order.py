@@ -1,9 +1,17 @@
 from flask import Flask
 
 orderlist = [
-                {'order_id': 10, 'Food': 'Rice', 'amount': 1500, 'avialable': False},
+                {
+                    'order_id': 10,
+                    'Food': 'Rice',
+                    'amount': 1500,
+                    'status': 'delivered'},
 
-                    {'order_id': 12, 'Food': 'matooke', 'amount': 3000, 'available': True}
+                {
+                    'order_id': 12,
+                    'Food': 'matooke',
+                    'amount': 3000,
+                    'status': 'completed'}
                 ]
 
 id = 0
@@ -13,13 +21,11 @@ class Order:
 
     """new order creation"""
 
-    def __init__(self, order_id, food, amount, available):
+    def __init__(self, order_id, food, amount, status):
         self.order_id = Order.get_id
         self.food = food
         self.amount = amount
-        self.available = available
-
-
+        self.status = status
 
     def get_id(self):
         if len(orderlist) == 0:
@@ -30,7 +36,15 @@ class Order:
 
     def list_order(self):
         orderlist = [
-                        {'order_id': 9, 'Food': 'Rice', 'amount': 1500, 'available': 'pending'},
-                            {'order_id': 4, 'Food': 'matooke', 'amount': 3000, 'available': 'delivered'}
+                        {
+                            'order_id': 9,
+                            'Food': 'Rice',
+                            'amount': 1500,
+                            'status': 'pending'},
+                        {
+                            'order_id': 4,
+                            'Food': 'matooke',
+                            'amount': 3000,
+                            'status': 'delivered'}
                         ]
         return orderlist

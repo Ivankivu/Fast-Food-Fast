@@ -17,11 +17,18 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.order = {
             "Food": "Rice",
             "amount": 1500,
-            "available": "pending",
+            "status": "pending",
             "order_id": 9
         }
 
     def test_get_all_orders(self):
+
+        '''
+         This method tests to check if there is json
+         data being returned when fetched and
+         the confirm the status code being returned
+        '''
+
         orders = self.client.get(
             '/api/v1/orders',
             content_type='application/json',
@@ -32,6 +39,12 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.assertIn('"order_id":9', str(orders.data))
 
     def test_ii_post_order(self):
+
+        '''
+         This method tests to check if there is json
+         data being posted and the confirm the status code being returned
+        '''
+
         order_list = []
         order1 = self.client.post(
             '/api/v1/orders',
@@ -41,7 +54,7 @@ class OnlineRestuarantTest(unittest.TestCase):
         order = {
             "Food": "Rice",
             "amount": 1500,
-            "available": "pending",
+            "status": "pending",
             "order_id": 9
         }
 
@@ -50,13 +63,17 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.assertIn('"order_id":9', str(order1.data))
 
     def test_welcome(self):
+
+        '''
+         This method tests to check if there is json
+         data being returned when fetched
+        '''
+
         self.assertTrue(True)
 
     def test_get_orders(self):
         raise ValueError("orders not found")
 
-    def test_not_found(self):
-        pass
 
 if __name__ == '__main__':
     unittest.main()
