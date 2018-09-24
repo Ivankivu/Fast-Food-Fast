@@ -69,9 +69,7 @@ class OnlineRestuarant():
             This endpoint helps to send/post data(an order) to a list
         '''
         data = request.get_json()
-        # for data in orderlist:
-        #     if data['order_id'] == order_id:
-        #         return jsonify({'error': "already exists"})
+
         order = {
                 'order_id': data['order_id'],
                 'Food': data['Food'],
@@ -118,6 +116,3 @@ class OnlineRestuarant():
     @app.errorhandler(404)
     def not_found(e):
         return '', 404
-
-if __name__ == '__main__':
-    app.run(debug=True)
