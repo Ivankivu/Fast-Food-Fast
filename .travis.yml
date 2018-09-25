@@ -10,7 +10,11 @@ install:
   - pip install codecov
 
 script: 
-  - pytest -v --cov main --cov-report term-missing
+  - pytest -v --cov app --cov-report term-missing
+  - coverage run --app setup.py test
   - coverage report
-  - coveralls
-  - codecov
+  
+
+after_success:
+  -coveralls
+  -codecov
