@@ -64,11 +64,13 @@ $ Python run.py
 
 | REQUEST | ROUTE | ACTION |
 | ------- | ----- | ------------- |
-| GET | [api/v1/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders) | Returns all orders made |
+| GET | [/api/v1/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders) | Returns all orders made |
 | POST | [/api/v1/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders) | adds a new  order|
-| GET | [api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | retrieves a specific order |
-| PUT | api/v1/orders/&lt;order_id&gt; | updates the status of a specific order |
-| DELETE| [api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | removes a specific order |
+| GET | [/api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | retrieves a specific order |
+| PUT | /api/v1/orders/&lt;order_id&gt; | updates the status of a specific order |
+| DELETE| [/api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | removes a specific order |
+
+Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
 
 Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
 
