@@ -39,7 +39,7 @@
     <!--header content-->
 
     <div class="container">
-        <form  id="form">
+        <form  id="form" action="/Fast-Food-Fast/UI/login.html">
             <div class="container2">
                 <div id="title">
                     <h1>SIGN UP</h1>
@@ -63,7 +63,7 @@
                         <input type="password" placeholder=" Enter Password" name="psw" required>
                         <input type="password" placeholder=" Repeat Password" name="psw-repeat" required>
                     </div>
-                <a class="registerbtn viewBtn" herf='/UI/login.html';">Signup</a>
+                <input type="submit" class="registerbtn viewBtn" value="Submit"zz>
                 <div class="signin">
                     <p>Already have an account? <a href="login.html">Sign in</a>.</p>
                 </div>
@@ -72,22 +72,6 @@
         </form>
 
     </div>
-    <script>
-        $(function() 
-{ 
-   $('.registerbtn').click(function() 
-   { 
-      if ($("input[name=name]").valid() && $("input[name=email]").valid()) 
-      { 
-         // do some stuff 
-      } 
-      else 
-      { 
-         // just show validation errors, dont post 
-      } 
-   }); 
-});
-        </script>
 </body>
 
 </html>
