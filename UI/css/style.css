@@ -217,14 +217,13 @@ signup form
     width:auto;
 }
 .registerbtn {
-    display: flex;
-    flex-direction: row;
-    background-color: #4CAF50;
-    color: white;
+    background: #4CAF50;
+    color: black;
     padding: 16px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
+    border-color: #4CAF50;
     opacity: 0.9;
     width:auto;
     justify-content: center;
