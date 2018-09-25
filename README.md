@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Ivankivu/Fast-Food-Fast.svg?branch=getallorders)](https://travis-ci.org/Ivankivu/Fast-Food-Fast) | [![Maintainability](https://api.codeclimate.com/v1/badges/5ce73e662ec9328c1345/maintainability)](https://codeclimate.com/github/Ivankivu/Fast-Food-Fast/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/5ce73e662ec9328c1345/test_coverage)](https://codeclimate.com/github/Ivankivu/Fast-Food-Fast/test_coverage) | [![codecov](https://codecov.io/gh/Ivankivu/Fast-Food-Fast/branch/getallorders/graph/badge.svg)](https://codecov.io/gh/Ivankivu/Fast-Food-Fast) | [![Coverage Status](https://coveralls.io/repos/github/Ivankivu/Fast-Food-Fast/badge.svg?branch=getallorders)](https://coveralls.io/github/Ivankivu/Fast-Food-Fast?branch=getallorders)
+[![Build Status](https://travis-ci.org/Ivankivu/Fast-Food-Fast.svg?branch=getallorders)](https://travis-ci.org/Ivankivu/Fast-Food-Fast) | [![Maintainability](https://api.codeclimate.com/v1/badges/5ce73e662ec9328c1345/maintainability)](https://codeclimate.com/github/Ivankivu/Fast-Food-Fast/maintainability) | [![codecov](https://codecov.io/gh/Ivankivu/Fast-Food-Fast/branch/getallorders/graph/badge.svg)](https://codecov.io/gh/Ivankivu/Fast-Food-Fast) | [![Coverage Status](https://coveralls.io/repos/github/Ivankivu/Fast-Food-Fast/badge.svg?branch=getallorders)](https://coveralls.io/github/Ivankivu/Fast-Food-Fast?branch=getallorders)
 
 # Fast-Food-Fast
 
@@ -67,10 +67,10 @@ $ Python run.py
 | GET | [api/v1/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders) | Returns all orders made |
 | POST | [/api/v1/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders) | adds a new  order|
 | GET | [api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | retrieves a specific order |
-| PUT | (api/v1/orders/&lt;order_id&gt;) | updates the status of a specific order |
+| PUT | [api/v1/orders/&lt;order_id&gt;] | updates the status of a specific order |
 | DELETE| [api/v1/orders/&lt;order_id&gt;](https://fastfood-fast-api-heroku.herokuapp.com/api/v1/orders/9) | removes a specific order |
 
-Use the links in the above table on (Postman)[https://www.getpostman.com/apps] to interact with the API
+Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
 
 
 ## Author
