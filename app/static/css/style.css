@@ -368,7 +368,7 @@ verticle menu
     background-color: #4CAF50;
 }
 
-.vertical-menu a:active {
+.vertical-menu a.active {
     background-color: #4CAF50; 
     color: #f7d794;
 }

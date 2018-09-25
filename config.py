@@ -16,7 +16,6 @@ class TestingConfig(Config):
     TESTING = True
 
 
-
 class ProductionConfig(Config):
     """Configurations for Production."""
     DEBUG = False

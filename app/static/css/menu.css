@@ -137,7 +137,6 @@ header .form input {
 
 #drawer ul a.active {
     background-color: #4CAF50;
-    /* Add a green color to the "active/current" link */
     color: white;
 }
 

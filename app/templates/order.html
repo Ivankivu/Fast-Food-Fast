@@ -7,27 +7,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" lang="en-us" content="foods, soft drinks, beverages, salads">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/menu.css" rel="stylesheet">
-    <link href="css/userdash.css" rel="stylesheet">
+    <link href="/app/static/css/style.css" rel="stylesheet">
+    <link href="/app/static/css/menu.css" rel="stylesheet">
+    <link href="/app/static/css/userdash.css" rel="stylesheet">
 </head>
 
 <body id="menu">
     <!--header content-->
     <div class="topnav">
         <div class="logo">
-            <a href="index.html">
+            <a href="/app/templates/index.html">
                 <h1>Fast Food Fast</h1>
             </a>
         </div>
-
         <ul>
-            <li><a class="active" href="login.html">User</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a class="active" href="/app/templates/login.html">User</a></li>
+            <li><a href="/app/templates/login.html">Logout</a></li>
         </ul>
     </div>
-
-
     <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
     <label for="drawer-toggle" id="drawer-toggle-label"></label>
     <header>Menu
@@ -46,21 +43,16 @@
                     </form>
                 </ul>
             </li>
-            <li><a href="menu.html" class="active">Food Menu</a></li>
-            <li><a href="orderhistory.html">Order History</a></li>
-            <li><a href="profile.html">My account</a></li>
-            <li><a href="index.html">Logout</a></li>
+            <li><a href="/app/templates/menu.html" class="active">Food Menu</a></li>
+            <li><a href="/app/templates/orderhistory.html">Order History</a></li>
+            <li><a href="/app/templates/profile.html">My account</a></li>
+            <li><a href="/app/templates/index.html">Logout</a></li>
         </ul>
     </nav>
     <div class="contain">
         <aside id="right">
             <section>
-
-
-
-
             </section>
-
         </aside>
         <aside id="left">
             <ul class="verticle-menu">
@@ -79,21 +71,16 @@
                                 <label><input type="radio" id="takeaway" disabled="" value="" name="option_2" check="">Take
                                     Away</label>
                             </div>
-
-
                         </div>
                         <hr>
                         <table>
                             <tbody id="mycart">
-
                                 <tr>
                                     <td class="each-name"><strong class="shopp-quantity"></strong>x <div class="pull-right shopp-price">€<em
                                                 class="price_order"></em></div>
                                     </td>
                                 </tr>
-
                             </tbody>
-
                             <tbody>
                                 <tr>
                                     <td>
@@ -116,12 +103,7 @@
                             </tbody>
                         </table>
                         <hr>
-
-
                         <input type="hidden" id="first-name" name="first-name" value="0">
-
-
-
                         <input type="hidden" name="menu_id" value="">
                         <input type="hidden" name="delivery_charge" value="">
                         <input type="hidden" name="total_order" value="">
@@ -131,21 +113,12 @@
                         <input type="hidden" name="priceorder" value="">
                         <input type="hidden" name="nameorder" value="">
                         <input type="hidden" name="number_quantity" value="">
-
-
                         <input type="hidden" name="notes_text" class="notes_text" value="">
-
-
-
                         <button type="submit" class="btn_full">Go to checkout</button>
                     </div>
                 </div>
             </ul>
         </aside>
-
-
-
-
     </div>
 </body>
 

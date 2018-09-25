@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, json, make_response, Response
-from main.controllers.new_order import Order
+from app.models import Order
 
 
 app = Flask(__name__)

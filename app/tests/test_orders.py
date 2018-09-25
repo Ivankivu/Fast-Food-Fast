@@ -1,9 +1,9 @@
 import unittest
 from unittest import TestCase
-from main.views.orders import OnlineRestuarant, orderlist
-from main.config import app_config
-from main.views.orders import app
-from flask import json
+from app.views import OnlineRestuarant, app
+from config import app_config
+from app.models import orderlist, Order
+from flask import Flask, json, jsonify
 
 
 class OnlineRestuarantTest(unittest.TestCase):
@@ -23,27 +23,16 @@ class OnlineRestuarantTest(unittest.TestCase):
 
     def test_get_all_orders(self):
 
-        '''
-         This method tests to check if there is json
-         data being returned when fetched and
-         the confirm the status code being returned
-        '''
-
         orders = self.client.get(
             '/api/v1/orders',
             content_type='application/json',
-            data=json.dumps(self.order)
+            data=json.dumps({'order': self.order})
         )
-        # data = json.loads(orders.data.decode())
+
         self.assertEqual(orders.status_code, 200)
         self.assertIn('"order_id":9', str(orders.data))
 
     def test_ii_post_order(self):
-
-        '''
-         This method tests to check if there is json
-         data being posted and the confirm the status code being returned
-        '''
 
         order_list = []
         order1 = self.client.post(
@@ -62,6 +51,21 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.assertEqual(201, order1.status_code)
         self.assertIn('"order_id":9', str(order1.data))
 
+    def test_edit_order(self):
+
+        order_list = []
+        order = self.client.post(
+            '/api/v1/orders/<int:order_id>',
+            content_type='application/json',
+            data=json.dumps(self.order)
+        )
+        order1 = {
+            "Food": "Rice",
+            "amount": 1500,
+            "status": "pending",
+            "order_id": 9
+        }
+
     def test_welcome(self):
 
         '''
@@ -72,5 +76,18 @@ class OnlineRestuarantTest(unittest.TestCase):
         self.assertTrue(True)
 
 
+class OrderTest(unittest.TestCase):
+
+    def test_orderlist(self):
+        self.orderlist = [
+                        {
+                            'order_id': 9,
+                            'Food': 'Rice',
+                            'amount': 1500,
+                            'status': 'pending'}]
+        if self.orderlist is None:
+            raise ValueError("list is empty")
+
+
 if __name__ == '__main__':
-    unittest.main()
+    unittest.app()

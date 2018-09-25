@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Fast Food Fast - login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" lang="en-us" content="foods, soft drinks, beverages, salads">
+    <link href="/app/static/css/style.css" rel="stylesheet">
+    <link href="/app/static/css/menu.css" rel="stylesheet">
+</head>
+
+<body id="login-page">
+    <!--header content-->
+    <div class="topnav">
+        <div class="logo">
+            <a href="/app/templates/index.html">
+                <h1>Fast Food Fast</h1>
+            </a>
+        </div>
+
+        <ul>
+            <li><a class="active" href="/app/templates/login.html">Login</a></li>
+            <li><a href="/app/templates/signup.html">Signup</a></li>
+        </ul>
+    </div>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <header>Menu
+    </header>
+    <nav id="drawer">
+        <ul>
+            <li><a href="/app/templates/login.html">Login</a></li>
+            <li><a href="/app/templates/signup.html">Signup</a></li>
+        </ul>
+    </nav>
+    <div class="container3">
+        <form id="form1" action="/app/templates/menu.html">
+            <a href="/app/templates/admindash.html">Admin</a>
+            <h2>Login</h2>
+            <hr>
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="e.g JohnDoe" required>
+
+            <label for="Password">Password:</label>
+            <input type="password" name="password" placeholder="********" required>
+
+            <input type="submit" class="registerbtn" value="Login">
+            <hr>
+            <div class="signin">
+                <p>Don't have an account? <a href="/app/templates/signup.html">Signup</a>.</p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

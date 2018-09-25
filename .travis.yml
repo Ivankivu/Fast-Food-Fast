@@ -13,6 +13,4 @@ script:
   - pytest -v --cov main --cov-report term-missing
   - coverage report
   - coveralls
-  
-after_success:
   - codecov

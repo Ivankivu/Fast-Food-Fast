@@ -1,18 +1,6 @@
 from flask import Flask
 
-orderlist = [
-                {
-                    'order_id': 10,
-                    'Food': 'Rice',
-                    'amount': 1500,
-                    'status': 'delivered'},
-
-                {
-                    'order_id': 12,
-                    'Food': 'matooke',
-                    'amount': 3000,
-                    'status': 'completed'}
-                ]
+orderlist = []
 
 id = 0
 
