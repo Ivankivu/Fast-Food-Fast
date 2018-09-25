@@ -63,7 +63,7 @@
                         <input type="password" placeholder=" Enter Password" name="psw" required>
                         <input type="password" placeholder=" Repeat Password" name="psw-repeat" required>
                     </div>
-                <input type="submit" class="registerbtn viewBtn" value="Submit" onclick="javascript: form.action='/UI/login.html';">
+                <a class="registerbtn viewBtn" herf='/UI/login.html';">Signup</a>
                 <div class="signin">
                     <p>Already have an account? <a href="login.html">Sign in</a>.</p>
                 </div>
@@ -73,11 +73,20 @@
 
     </div>
     <script>
-        $(document).ready(function(){
-            $("form").click(function(event){
-                event.preventDefault();
-            });
-        });
+        $(function() 
+{ 
+   $('.registerbtn').click(function() 
+   { 
+      if ($("input[name=name]").valid() && $("input[name=email]").valid()) 
+      { 
+         // do some stuff 
+      } 
+      else 
+      { 
+         // just show validation errors, dont post 
+      } 
+   }); 
+});
         </script>
 </body>
 
