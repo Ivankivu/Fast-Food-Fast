@@ -23,16 +23,5 @@ class Order:
         return id
 
     def list_order(self):
-        orderlist = [
-                        {
-                            'order_id': 9,
-                            'Food': 'Rice',
-                            'amount': 1500,
-                            'status': 'pending'},
-                        {
-                            'order_id': 4,
-                            'Food': 'matooke',
-                            'amount': 3000,
-                            'status': 'delivered'}
-                        ]
+        orderlist = []
         return orderlist
