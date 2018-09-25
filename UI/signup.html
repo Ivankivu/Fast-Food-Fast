@@ -39,7 +39,7 @@
     <!--header content-->
 
     <div class="container">
-        <form  id="form" action="/UI/login.html">
+        <form  id="form">
             <div class="container2">
                 <div id="title">
                     <h1>SIGN UP</h1>
@@ -72,6 +72,13 @@
         </form>
 
     </div>
+    <script>
+        $(document).ready(function(){
+            $("registerbtn").click(function(event){
+                event.preventDefault();
+            });
+        });
+        </script>
 </body>
 
 </html>
