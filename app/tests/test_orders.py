@@ -28,8 +28,7 @@ class OnlineRestuarantTest(unittest.TestCase):
             content_type='application/json',
             data=json.dumps({'order': self.order})
         )
-
-        # self.assertEqual(orders.status_code, 200)
+        # self.assertEqual(orderlist.status_code, 200)
         # self.assertIn('"order_id":9', str(orders.data))
 
     def test_ii_post_order(self):
