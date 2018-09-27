@@ -42,7 +42,7 @@ To get started in order to run tests, use this command below in your terminal
 
 Clone this Repository
 
-$ https://github.com/Ivankivu/Fast-Food-Fast.git
+[clone this](https://github.com/Ivankivu/Fast-Food-Fast.git)
 
 `$ cd Fast-Food-Fast`
 
@@ -60,6 +60,15 @@ Run the server At the terminal or console type
 
 `$ Python run.py`
 
+use this sample data to test the API functionality
+
+``` {
+        "Food": "matooke",
+        "amount": 1500,
+        "order_id": 4,
+        "status": "pending"
+    }```
+
 # API routes and their actions
 
 | REQUEST | ROUTE | ACTION |
@@ -74,4 +83,4 @@ Use the links in the above table on [Postman](https://www.getpostman.com/apps) t
 
 ## Author
 
-Ivan
+Ivan Kivumbi

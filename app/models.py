@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from collections import defaultdict
 
 orderlist = []
 
@@ -6,12 +7,9 @@ orderlist = []
 class Order:
 
     """new order creation"""
-    increment = 0
 
     def __init__(self, order_id, food, amount, status):
-
-        order.increment += 1
-        self.order_id = order_id.increment
+        self.order_id = order_id
         self.food = food
         self.amount = amount
         self.status = status
@@ -23,23 +21,6 @@ class Order:
     def get_order_list():
         return jsonify(orderlist)
 
-    def create_order():
-        data = request.get_json()
-        order = {
-            'order_id': data['order_id'],
-            'Food': data['Food'],
-            'amount': data['amount'],
-            'status': data['status']
-        }
-
-        for order in orderlist:
-            if order['order_id'] == data['order_id']:
-                return jsonify({'Alert!!': "already exists"})
-            elif order['status'] != data['pending']:
-                return jsonify({"Messege": "set status to 'pending'"})
-        orderlist.append(order)
-        return jsonify({'orderlist': orderlist}), 201
-
     def get_all_orders():
 
         if orderlist == []:
@@ -47,8 +28,22 @@ class Order:
         else:
             return jsonify(orderlist), 200
 
-    def get_order_by_id(order_id):
+    def create_order():
+        data = request.get_json()
+        order = {
+            'Food': data['Food'],
+            'amount': data['amount']
+        }
+        data['order_id'] = len(orderlist)+1
+        order_id = data['order_id']
+        order.update({'order_id': data['order_id']})
+        data['status'] = "pending"
+        order.update({'status': data['status']})
 
+        orderlist.append(order)
+        return jsonify({'orderlist': orderlist}), 201
+
+    def get_order_by_id(order_id):
         if orderlist == []:
             return jsonify({"error": "orders not found"}), 404
 

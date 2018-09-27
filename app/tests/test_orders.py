@@ -48,7 +48,8 @@ class OnlineRestuarantTest(unittest.TestCase):
 
         order_list.append(order)
         self.assertEqual(201, order1.status_code)
-        self.assertIn('"order_id":9', str(order1.data))
+        
+        self.assertIn('"order_id":1', str(order1.data))
 
     def test_edit_order(self):
 
