@@ -55,39 +55,3 @@ function add_row()
  document.getElementById("new_type").value="";
  document.getElementById("new_status").value="";
 }
-
-
-//change tble-row color on mouse hover
-var tbl = document.getElementById("tblorders");
-if (tbl != null) {
-    if (tbl.rows[0] != null) {
-        tbl.rows[0].style.backgroundColor = "#365890";
-        tbl.rows[0].style.color = "#FFFFFF";
-    }
-    for (var i = 1; i < tbl.rows.length; i++) {
-        tbl.rows[i].style.cursor = "pointer";
-        tbl.rows[i].onmousemove = function () { this.style.backgroundColor = "#FF2080"; this.style.color = "#FFFFFF"; };
-        tbl.rows[i].onmouseout = function () { this.style.backgroundColor = ""; this.style.color = ""; };
-    }
-}
-
-//  checkout modal
-  var modal = document.getElementById('myModal');
-
-  var btns = document.querySelectorAll(".addBtn");
-
-  var span = document.getElementsByClassName("close")[0];
-
-  [].forEach.call(btns, function (el) {
-      el.onclick = function () {
-          modal.style.display = "block";
-      }
-  })
-  span.onclick = function () {
-      modal.style.display = "none";
-  }
-  window.onclick = function (event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
