@@ -24,8 +24,7 @@ class OnlineRestuarant():
     def welcome():
 
         '''
-         This endpoint helps to retrive/get existing
-         data(orders) from a list
+            This is the first page
         '''
 
         return make_response(jsonify({"message": "You are most welcome!"}))
@@ -34,8 +33,7 @@ class OnlineRestuarant():
     def get_orders():
 
         '''
-         This endpoint helps to retrive/get existing
-         data(orders) from a list
+         Retrive/get existing data(orders) from a list
         '''
         response = Order.get_all_orders()
         return response
@@ -44,8 +42,7 @@ class OnlineRestuarant():
     def get_order(order_id):
 
         '''
-            This endpoint helps to retrive/get existing
-            data(orders) from a list
+            Retrive/get a single data(order) from a list
         '''
         response = Order.get_order_by_id(order_id)
         return response
@@ -54,7 +51,7 @@ class OnlineRestuarant():
     def add_order():
 
         '''
-            This endpoint helps to send/post data(an order) to a list
+            send/post data(an order) to a list
         '''
         response = Order.create_order()
         return response
@@ -63,8 +60,7 @@ class OnlineRestuarant():
     def edit_order(order_id):
 
         '''
-            This endpoint helps to change/edit
-            existing data(an order) in a list
+            change/edit existing data(an order) in a list
         '''
         response = Order.change_order_status(order_id)
         return response
@@ -73,7 +69,7 @@ class OnlineRestuarant():
     def remove_order(order_id):
 
         '''
-            This endpoint helps to remove/delete data(an order) from a list
+            Remove/delete data(an order) from a list
         '''
         response = Order.delete_order(order_id)
         return response

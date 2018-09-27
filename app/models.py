@@ -34,6 +34,11 @@ class Order:
             'Food': data['Food'],
             'amount': data['amount']
         }
+
+        if 'Food':
+            return jsonify({"error": "invalid input"}), 404
+        if 'amount':
+            return jsonify({"error": "invalid input"}), 404
         data['order_id'] = len(orderlist)+1
         order_id = data['order_id']
         order.update({'order_id': data['order_id']})
