@@ -26,7 +26,7 @@ class Order:
         if orderlist == []:
             return jsonify({"error": "orders not found"}), 404
         else:
-            return jsonify(orderlist), 200
+            return jsonify({'orderlist': orderlist}), 200
 
     def create_order():
         data = request.get_json()

@@ -62,12 +62,10 @@ Run the server At the terminal or console type
 
 use this sample data to test the API functionality
 
-``` {
+`{
         "Food": "matooke",
-        "amount": 1500,
-        "order_id": 4,
-        "status": "pending"
-    }```
+        "amount": 1500
+    }`
 
 # API routes and their actions
 
