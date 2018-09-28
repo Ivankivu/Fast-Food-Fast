@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from app.views import OnlineRestuarant, app
 from config import app_config
-from app.models import orderlist, Order, Orderdict
+from app.models import orderlist, Order
 from flask import Flask, json, jsonify
 
 
