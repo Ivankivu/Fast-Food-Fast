@@ -58,7 +58,6 @@ class Order:
 
         data = request.get_json()
         order1 = {
-            'order_id': data['order_id'],
             'Food': data['Food'],
             'amount': data['amount'],
             'status': data['status']
@@ -69,7 +68,7 @@ class Order:
                if order['order_id'] == order_id]
         ods[0]['status'] = data['status']
         ods[0] = order1
-        return jsonify({'orderlist': orderlist}), 200
+        return jsonify({'orderlist': order1}), 200
 
     def delete_order(order_id):
 
