@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from collections import defaultdict
 
 orderlist = []
 
@@ -29,17 +28,24 @@ class Order:
             return jsonify({'orderlist': orderlist}), 200
 
     def create_order():
+        amount = 0
         data = request.get_json()
+        if len(data['Food']) == 0:
+            return jsonify({"error": "food should not be empty"}), 404
+
+        if data['Food'].isspace():
+            return jsonify({"error": "food should not be empt spaces"}), 404
+        if not isinstance(data['amount'], int):
+            return jsonify({"error": "amount should be integer"}), 404
         order = {
             'Food': data['Food'],
             'amount': data['amount']
-        }
+            }
         data['order_id'] = len(orderlist)+1
         order_id = data['order_id']
         order.update({'order_id': data['order_id']})
         data['status'] = "pending"
         order.update({'status': data['status']})
-
         orderlist.append(order)
         return jsonify({'orderlist': orderlist}), 201
 

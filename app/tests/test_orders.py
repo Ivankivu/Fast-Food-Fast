@@ -21,6 +21,10 @@ class OnlineRestuarantTest(unittest.TestCase):
             "order_id": 9
         }
 
+    def test_get_order_list(self):
+        return orderlist
+        self.assertEqual(201, orders.status_code)
+
     def test_get_all_orders(self):
         order_list = []
         orders = self.client.get(
@@ -28,8 +32,29 @@ class OnlineRestuarantTest(unittest.TestCase):
             content_type='application/json',
             data=json.dumps({'order': self.order})
         )
-        return orders
-        self.assertEqual(201, orders.status_code)
+
+    def test_item_posted(self):
+        order_list = []
+        orders = self.client.post(
+            '/api/v1/orders',
+            content_type='application/json',
+            data=json.dumps(self.order)
+        )
+        self.assertEqual(orders.status_code, 201)
+        self.assertIn("pending", str(orders.data))
+
+    def test_food_empty_string(self):
+        order = {
+            "Food": "",
+            "amount": 1500
+        }
+        order1 = self.client.post(
+            '/api/v1/orders',
+            content_type='application/json',
+            data=json.dumps(order)
+        )
+        self.assertEqual(order1.status_code, 404)
+        self.assertIn("food should not be empty", str(order1.data))
 
     def test_ii_post_order(self):
 
