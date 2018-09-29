@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from collections import defaultdict
 
 orderlist = []
 
@@ -8,18 +7,24 @@ class Order:
 
     """new order creation"""
 
-    def __init__(self, order_id, food, amount, status):
+    def __init__(self, order_id=0, Food="fish", amount=3000, status="pending"):
         self.order_id = order_id
-        self.food = food
+        self.Food = Food
         self.amount = amount
         self.status = status
+        self.order = {
+            "Food": Food,
+            "amount": amount,
+            "status": status,
+            "order_id": order_id
+        }
 
     def validate_json(json):
         if not json or not hasattr(json, orderlist):
             raise NoJsonException()
 
     def get_order_list():
-        return jsonify(orderlist)
+        return jsonify(orderlist), 201
 
     def get_all_orders():
 
@@ -29,17 +34,24 @@ class Order:
             return jsonify({'orderlist': orderlist}), 200
 
     def create_order():
+        amount = 0
         data = request.get_json()
+        if len(data['Food']) == 0:
+            return jsonify({"error": "food should not be empty"}), 404
+
+        if data['Food'].isspace():
+            return jsonify({"error": "food should not be empt spaces"}), 404
+        if not isinstance(data['amount'], int):
+            return jsonify({"error": "amount should be integer"}), 404
         order = {
             'Food': data['Food'],
             'amount': data['amount']
-        }
+            }
         data['order_id'] = len(orderlist)+1
         order_id = data['order_id']
         order.update({'order_id': data['order_id']})
         data['status'] = "pending"
         order.update({'status': data['status']})
-
         orderlist.append(order)
         return jsonify({'orderlist': orderlist}), 201
 
