@@ -7,18 +7,24 @@ class Order:
 
     """new order creation"""
 
-    def __init__(self, order_id, food, amount, status):
+    def __init__(self, order_id=0, Food="fish", amount=3000, status="pending"):
         self.order_id = order_id
-        self.food = food
+        self.Food = Food
         self.amount = amount
         self.status = status
+        self.order = {
+            "Food": Food,
+            "amount": amount,
+            "status": status,
+            "order_id": order_id
+        }
 
     def validate_json(json):
         if not json or not hasattr(json, orderlist):
             raise NoJsonException()
 
     def get_order_list():
-        return jsonify(orderlist)
+        return jsonify(orderlist), 201
 
     def get_all_orders():
 
