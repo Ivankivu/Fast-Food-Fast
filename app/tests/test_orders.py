@@ -1,8 +1,8 @@
 import unittest
 from unittest import TestCase
-from app.views import OnlineRestuarant, app
+from app.views.orderviews import OnlineRestuarant, app
 from config import app_config
-from app.models import orderlist, Order
+from app.models.orders import orderlist, Order
 from flask import Flask, json, jsonify, request
 
 
