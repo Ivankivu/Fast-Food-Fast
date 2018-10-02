@@ -54,7 +54,8 @@ use this sample data to test the API functionality
 
 | REQUEST | ROUTE | FUNCTIONALITY |
 | ------- | ----- | ------------- |
-| POST | [/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/auth/signup) | Register new user |
+| POST | [/api/v2/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/auth/signup) | Register new user |
+| POST | [/api/v2/menu](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/menu) | Add a meal option to the menu |
 
 
 Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
