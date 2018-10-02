@@ -20,12 +20,7 @@ class OnlineRestuarant():
         </div>
         '''
 
-    @app.route("/api/v1/", methods=["GET"])
-    def welcome():
-
-        return make_response(jsonify({"message": "You are most welcome!"}))
-
-    @app.route("/api/v1/orders", methods=["GET"])
+    @app.route("/orders/", methods=["GET"])
     def get_orders():
 
         response = Order.get_all_orders()

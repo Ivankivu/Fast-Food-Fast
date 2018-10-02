@@ -31,6 +31,7 @@ class UserView(User):
         user_name = data['user_name']
         user_email = data['user_email']
         user_password = data['user_password']
+
         response = User.adduser(user_name, user_email, user_password)
         return response
 
