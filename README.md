@@ -8,6 +8,7 @@ Fast-Food-Fast is a food delivery service app for a restaurant
 
 * As a User:
     1. I should signup for a new account.
+    2. I should be able to see the available food menu
 
 ## Built-with
 
@@ -36,6 +37,12 @@ Install all the necessary dependencies by
 
 `$ pip install -r requirements.txt`
 
+Install and setup postgres database 
+
+Install postgres python module
+
+`$ pip install psycopg2`
+
 ### Run app by
 
 Run the server At the terminal or console type
@@ -55,6 +62,7 @@ use this sample data to test the API functionality
 | ------- | ----- | ------------- |
 | POST | [/api/v2/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/auth/signup) | Register new user |
 | POST | [/api/v2/menu](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/menu) | Add a meal option to the menu |
+| GET [/api/v2/menu](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/menu) | Get Menu |
 
 
 Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
