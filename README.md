@@ -45,9 +45,8 @@ Run the server At the terminal or console type
 use this sample data to test the API functionality
 
 `{
-    "user_name": "grace",
-    "user_email": "hilvan@livel.com",
-    "user_password": "7654321"
+"food_type": "katogo",
+"food_price": 5000
 }`
 
 # API routes and their actions
