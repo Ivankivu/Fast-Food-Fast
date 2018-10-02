@@ -1,5 +1,5 @@
 import unittest
-from config import app_config
+from ..config import app_config
 
 
 class UserTestCase(unittest.TestCase):

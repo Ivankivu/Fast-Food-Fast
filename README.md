@@ -7,7 +7,7 @@ Fast-Food-Fast is a food delivery service app for a restaurant
 ## Features
 
 * As a User:
-    1. should signup on form for personal and address information.
+    1. I should signup for a new account.
 
 ## Built-with
 
@@ -55,7 +55,7 @@ use this sample data to test the API functionality
 | REQUEST | ROUTE | FUNCTIONALITY |
 | ------- | ----- | ------------- |
 | POST | [/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/auth/signup) | Register new user |
-|
+
 
 Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
 
