@@ -1,10 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, make_response, request, json
+import logging
 from app.database.server import DBConnection
 from app.models.users import User
 from app import app
 
 
-class UserView():
+class UserView(User):
 
     @app.route("/", methods=["GET"])
     def index():
@@ -20,13 +21,22 @@ class UserView():
         </div>
         '''
 
-    @app.route('/auth/signup/', methods=['POST'])
+    @app.route('/auth/signup', methods=['GET', 'POST'])
     def signup():
 
         """
-        Add an user to the database through the Signup form
+        Add an user to the database through the Signup
         """
-        response2 = User('', '', '').adduser()
-        if not response2:
-            return jsonify({'error': "dfg"})
-        return jsonify({'message': response2})
+        data = request.get_json()
+        user_name = data['user_name']
+        user_email = data['user_email']
+        user_password = data['user_password']
+        response = User.adduser(user_name, user_email, user_password)
+        return response
+
+    @app.route('/auth/login', methods=['GET', 'POST'])
+    def login():
+        """
+        login user
+        """
+        pass

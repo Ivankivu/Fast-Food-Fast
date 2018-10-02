@@ -1,71 +1,49 @@
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, request, jsonify, make_response
+import logging
 from app.database.server import DBConnection
-from app.validate import validate_user
 
 
 class User(DBConnection):
 
-    def __init__(self, username, user_email, user_password):
-        DBConnection.__init__(self)
+    def adduser(user_name, user_email, user_password):
+
         data = request.get_json()
-        self.username = data['user_name']
-        self.user_email = data['user_email']
-        self.user_password = data['user_password']
-        self.cursor = self.conn.cursor()
+        user_name = data['user_name']
+        user_email = data['user_email']
+        user_password = data['user_password']
 
-    def adduser(self):
-        sql = "INSERT INTO users(user_name, user_email, user_password)VALUES('{}', '{}', '{}')".format(
-                    self.username,
-                    self.user_email,
-                    self.user_password)
-        self.cursor.execute(sql)
-        self.conn.commit()
-        with DBConnection() as cursor:
-            cursor.execute("SELECT * FROM users WHERE user_email = '{}'"
-                           .format(self.user_email))
+        sql = '''INSERT INTO  users(user_name, user_email, user_password) VALUES(%s, %s, %s)'''
+        try:
+            with DBConnection() as cursor:
+                cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % user_email)
+                if len(data['user_name']) == 0:
+                    return jsonify({"error": "username should not be empty"}), 404
+                if len(data['user_email']) == 0:
+                    return jsonify({"error": "Email should not be empty"}), 404
+                if len(data['user_password']) == 0:
+                    return jsonify({"error": "Password should not be empty"}), 404
 
-            if cursor.fetchone():
-                return make_response(jsonify({
-                    "message": "Email already in Exists"}), 409)
-            else:
-                cursor.execute("SELECT * FROM users WHERE user_email = '{}'"
-                               .format(self.user_email))
-                return make_response(jsonify({
-                    "message": "Successfully registered"}), 201)
-        qq = self.cursor.execute("select * from users")
-        return make_response(jsonify({'message': 'account added successfully!'}), 201)
+                if data['user_name'].isspace():
+                    return jsonify({"error": "Username should not have empty spaces"}), 404
+                if data['user_email'].isspace():
+                    return jsonify({"error": "Email should not have empty spaces"}), 404
+                if data['user_password'].isspace():
+                    return jsonify({"error": "Password should not have empty spaces"}), 404
 
-    # app.route('/auth/login', methods=['GET', 'POST'])
-    # def login():
-    #     """
-    #     Handle requests to the /login route
-    #     Log an user in through the login form
-    #     """
-    #     form = LoginForm()
-    #     if form.validate_on_submit():
+                if not isinstance(data['user_name'], str):
+                    return jsonify({"error": "amostr should be a string"}), 404
 
-    #         # check whether user exists in the database and whether
-    #         # the password entered matches the password in the database
-    #         user = User.query.filter_by(email=form.user_email.data).first()
-    #         if user is not None and user.verify_password(
-    #                 form.user_password.data):
-    #             # log user in
-    #             login_user(user)
+                if not isinstance(data['user_email'], str):
+                    return jsonify({"error": "amostr should be  a string"}), 404
 
-    #             # when login details match
-    #             return ('welcome user!!')
-
-    #         # when login details are do not match
-    #         else:
-    #             flash('Invalid email or password.')
-
-    #     return ('please login')
-
-    # app.route('/auth/logout')
-    # @login_required
-    # def logout():
-    #     """
-    #     Logout a user
-    #     """
-    #     logout_user()
-    #     flash('You have successfully been logged out.')
+                if not isinstance(data['user_password'], str):
+                    return jsonify({"error": "amostr should be a string"}), 404
+                if cursor.fetchone():
+                    return make_response(jsonify({"message": "Email already in use"}), 409)
+                else:
+                    cursor.execute(sql, (user_name, user_email, user_password))
+                    cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % user_email)
+                return make_response(jsonify({"message": "Successfully registered"}), 201)
+        except Exception as e:
+            logging.error(e)
+            return make_response(jsonify({'message': str(e)}), 500)

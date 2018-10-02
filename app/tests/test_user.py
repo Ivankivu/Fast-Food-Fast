@@ -10,3 +10,9 @@ class UserTestCase(unittest.TestCase):
 
     def setUp(self):
         self.client = app.test_client(self)
+
+    def test_user_signup(self):
+        pass
+
+    def test_user_ogin(self):
+        pass

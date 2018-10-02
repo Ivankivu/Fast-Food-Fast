@@ -1,23 +1,16 @@
 import psycopg2
 import os
-from config import app_config
 from pprint import pprint
+from ..config import app_config
 
 
-class DBConnection(object):
+class DBConnection():
 
-    def __enter_(self):
-
+    def __enter__(self):
         try:
-
-            self.conn = psycopg2.connect(
-                database='fastfood',
-                user='postgres',
-                password='andela',
-                host='localhost',
-                port='5432')
-            print('Opened database successfully')
+            self.conn = psycopg2.connect("dbname = 'fastfood' user = 'postgres' host = 'localhost' password = 'andela' port = '5432'")
             self.cursor = self.conn.cursor()
+            return self.cursor
         except (Exception, psycopg2.DatabaseError) as error:
             pprint(error)
 
@@ -25,5 +18,3 @@ class DBConnection(object):
         self.conn.commit()
         self.cursor.close()
         self.conn.close()
-
-
