@@ -155,3 +155,100 @@
                 #         """
                 #         logout_user()
                 #         flash('You have successfully been logged out.')
+
+
+
+
+        # try:
+        #     with DBConnection() as cursor:
+        #         sql = "select row_to_json(row) from (SELECT * FROM orders user_name) row;"
+        #         cursor.execute(sql)
+        #         orderlist = cursor.fetchall()
+        #         return make_response(jsonify(orderlist))
+
+        #         # return make_response(jsonify({"message": "Successfully Added to menu"}), 201)
+
+        # except Exception as e:
+        #     logging.error(e)
+        #     return make_response(jsonify({'message': str(e)}), 500)
+
+
+         # if len(data['Food']) == 0:
+        #     return jsonify({"error": "food should not be empty"}), 404
+
+        # if data['Food'].isspace():
+        #     return jsonify({"error": "food should not be empt spaces"}), 404
+        # if not isinstance(data['amount'], int):
+        #     return jsonify({"error": "amount should be integer"}), 404
+    
+
+    # def get_order_by_id(order_id):
+    #     if orderlist == []:
+    #         return jsonify({"error": "orders not found"}), 404
+
+    #     orders = [order for order in orderlist
+    #               if order['order_id'] == order_id]
+    #     if not orders:
+    #         return jsonify({"error": "no match found"}), 404
+
+    #     return jsonify({'order': orders[0]}), 200
+
+    # def change_order_status(order_id):
+
+    #     data = request.get_json()
+    #     order1 = {
+    #         'Food': data['Food'],
+    #         'amount': data['amount'],
+    #         'status': data['status']
+    #     }
+    #     if orderlist == []:
+    #         return jsonify({"Error": "No orders found"})
+    #     ods = [order for order in orderlist
+    #            if order['order_id'] == order_id]
+    #     ods[0]['status'] = data['status']
+    #     ods[0] = order1
+    #     return jsonify({'orderlist': order1}), 200
+
+    # def delete_order(order_id):
+
+    #     od = [order for order in orderlist
+    #           if order['order_id'] == order_id]
+    #     if not od:
+    #         return jsonify({'error': 'order does not exist'}), 404
+
+    #     orderlist.remove(od[0])
+    #     return jsonify({'orderlist': orderlist}), 200
+
+
+
+
+
+    # @app.route("/api/v1/orders/<int:order_id>", methods=["PUT"])
+    # def edit_order(order_id):
+
+    #     response = Order.change_order_status(order_id)
+    #     return response
+
+    # @app.route("/api/v1/orders/<int:order_id>", methods=["DELETE"])
+    # def remove_order(order_id):
+
+    #     response = Order.delete_order(order_id)
+    #     return response
+
+    # @app.errorhandler(404)
+    # def not_found(e):
+    #     return '', 404
+
+
+
+#   @app.route("/orders/", methods=["GET"])
+#     def get_orders():
+
+#         response = Order.get_all_orders()
+#         return response
+
+#     @app.route("/api/v1/orders/<int:order_id>", methods=["GET"])
+#     def get_order(order_id):
+
+#         response = Order.get_order_by_id(order_id)
+#         return response

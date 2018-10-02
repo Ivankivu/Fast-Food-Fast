@@ -44,6 +44,7 @@ class User(DBConnection):
                     cursor.execute(sql, (user_name, user_email, user_password))
                     cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % user_email)
                 return make_response(jsonify({"message": "Successfully registered"}), 201)
+                
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)

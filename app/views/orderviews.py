@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify, json, make_response, Response
-from app.models.orders import Order, orderlist
+from app.database.server import DBConnection
+import logging
+from app.models.orders import Order
+from app import app
 
-app = Flask(__name__)
 
-
-class OnlineRestuarant():
+class OnlineRestuarant(DBConnection):
 
     @app.route("/", methods=["GET"])
     def Home():
@@ -15,41 +16,18 @@ class OnlineRestuarant():
         </div><div style="text-align:center;">
         <a style="margin-top:400px;text-decoration:none;
         border:1px solid orange;border-radius:15px;padding:50px;"
-         href="https://fastfood-fast-api-heroku.herokuapp.com/api/v1/">
+         href="https://fastfood-fast-api-heroku.herokuapp.com/users/orders">
          next page</a>
         </div>
         '''
 
-    @app.route("/orders/", methods=["GET"])
-    def get_orders():
-
-        response = Order.get_all_orders()
-        return response
-
-    @app.route("/api/v1/orders/<int:order_id>", methods=["GET"])
-    def get_order(order_id):
-
-        response = Order.get_order_by_id(order_id)
-        return response
-
-    @app.route("/api/v1/orders", methods=["POST"])
+    @app.route("/users/orders", methods=["POST"])
     def add_order():
 
-        response = Order.create_order()
+        data = request.get_json()
+        user_name = data['user_name']
+        food_type = data['food_type']
+        qty = data['qty']
+
+        response = Order.create_order(user_name, food_type, qty)
         return response
-
-    @app.route("/api/v1/orders/<int:order_id>", methods=["PUT"])
-    def edit_order(order_id):
-
-        response = Order.change_order_status(order_id)
-        return response
-
-    @app.route("/api/v1/orders/<int:order_id>", methods=["DELETE"])
-    def remove_order(order_id):
-
-        response = Order.delete_order(order_id)
-        return response
-
-    @app.errorhandler(404)
-    def not_found(e):
-        return '', 404
