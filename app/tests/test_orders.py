@@ -1,8 +1,8 @@
 import unittest
 from unittest import TestCase
-from app.views import OnlineRestuarant, app
-from config import app_config
-from app.models import orderlist, Order
+from app.views.orderviews import OnlineRestuarant, app
+from ..config import app_config
+from app.models.orders import orderlist, Order
 from flask import Flask, json, jsonify, request
 
 
@@ -33,7 +33,7 @@ class OnlineRestuarantTest(unittest.TestCase):
             content_type='application/json',
             data=json.dumps({'order': self.order_list})
         )
-        self.assertEqual(404, orders.status_code)
+        self.assertEqual(405, orders.status_code)
 
     def test_get_all_orders(self):
         order_list = []

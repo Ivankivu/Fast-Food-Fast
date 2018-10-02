@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, json, make_response, Response
-from app.models import Order, orderlist
+from app.models.orders import Order, orderlist
 
 app = Flask(__name__)
 
@@ -20,12 +20,7 @@ class OnlineRestuarant():
         </div>
         '''
 
-    @app.route("/api/v1/", methods=["GET"])
-    def welcome():
-
-        return make_response(jsonify({"message": "You are most welcome!"}))
-
-    @app.route("/api/v1/orders", methods=["GET"])
+    @app.route("/orders/", methods=["GET"])
     def get_orders():
 
         response = Order.get_all_orders()
