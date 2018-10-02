@@ -1,5 +1,5 @@
 from flask import Flask
-from app.views import orderviews
+# from app.views import orderviews
 from app.views import userviews
 from app.views import menuviews
 from app import app
