@@ -33,7 +33,7 @@ class OnlineRestuarantTest(unittest.TestCase):
             content_type='application/json',
             data=json.dumps({'order': self.order_list})
         )
-        self.assertEqual(404, orders.status_code)
+        self.assertEqual(405, orders.status_code)
 
     def test_get_all_orders(self):
         order_list = []
