@@ -241,11 +241,7 @@
 
 
 
-#   @app.route("/orders/", methods=["GET"])
-#     def get_orders():
 
-#         response = Order.get_all_orders()
-#         return response
 
 #     @app.route("/api/v1/orders/<int:order_id>", methods=["GET"])
 #     def get_order(order_id):

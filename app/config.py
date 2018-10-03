@@ -15,7 +15,7 @@ class TestingConfig(BaseConfig):
 
     """Configurations for Testing, with a separate test database."""
 
-    DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/fastfood'
+    DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/test_db'
     TESTING = True
     DEBUG = True
 

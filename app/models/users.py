@@ -31,13 +31,11 @@ class User(DBConnection):
                     return jsonify({"error": "Password should not have empty spaces"}), 404
 
                 if not isinstance(data['user_name'], str):
-                    return jsonify({"error": "amostr should be a string"}), 404
+                    return jsonify({"error": "user_name should be a string"}), 404
 
                 if not isinstance(data['user_email'], str):
-                    return jsonify({"error": "amostr should be  a string"}), 404
-
-                if not isinstance(data['user_password'], str):
-                    return jsonify({"error": "amostr should be a string"}), 404
+                    return jsonify({"error": "user_email should be  a string"}), 404
+                    
                 if cursor.fetchone():
                     return make_response(jsonify({"message": "Email already in use"}), 409)
                 else:

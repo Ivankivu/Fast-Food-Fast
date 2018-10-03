@@ -4,7 +4,6 @@ from pprint import pprint
 from ..config import app_config
 
 
-
 class DBConnection():
 
     def __enter__(self):

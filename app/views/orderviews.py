@@ -21,7 +21,7 @@ class OnlineRestuarant(DBConnection):
         </div>
         '''
 
-    @app.route("/users/orders", methods=["POST"])
+    @app.route("/users/orders", methods=['GET', 'POST'])
     def add_order():
 
         data = request.get_json()
@@ -30,4 +30,10 @@ class OnlineRestuarant(DBConnection):
         qty = data['qty']
 
         response = Order.create_order(user_name, food_type, qty)
+        return response
+
+    @app.route("/orders/", methods=["GET"])
+    def get_orders():
+
+        response = Order.get_all_orders()
         return response
