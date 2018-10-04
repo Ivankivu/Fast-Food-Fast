@@ -31,23 +31,23 @@ class OnlineRestuarant():
     @app.route("/orders/", methods=["GET"])
     def get_orders():
 
-        response = Order.get_all_orders()
+        response = Order().get_all_orders()
         return response
 
     @app.route("/orders/<order_id>", methods=["GET"])
     def get_order(order_id):
 
-        response = Order.get_order_by_id()
+        response = Order().get_order_by_id()
         return response
 
     @app.route("/users/orders/<user_name>", methods=["GET"])
     def order_history(user_name):
 
-        response = Order.get_order_history(user_name)
+        response = Order().get_order_history(user_name)
         return response
 
     @app.route("/users/orders/<order_id>", methods=['PUT'])
     def order_change():
 
-        response = Order.change_order_status()
+        response = Order().change_order_status()
         return response

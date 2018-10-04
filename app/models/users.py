@@ -103,3 +103,15 @@ class User(object):
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
+
+    def get_all_users(user_name):
+        try:
+            with DBConnection() as cursor:
+                sql = "select row_to_json(row) from (SELECT * FROM users user_name) row;"
+                cursor.execute(sql)
+                clients = cursor.fetchall()
+                return clients
+
+        except Exception as e:
+            logging.error(e)
+            return make_response(jsonify({'message': str(e)}), 500)

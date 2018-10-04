@@ -9,10 +9,11 @@ class Order(object):
 
     """new order creation"""
 
-    def __init__(self, user_name=str, food_type=str, qty=int):
+    def __init__(self, user_name=str, food_type=str, qty=int, order_id=int):
         self.user_name = user_name
         self.food_type = food_type
         self.qty = qty
+        self.order_id = order_id
 
     def create_order(self):
 
@@ -52,24 +53,23 @@ class Order(object):
     def get_order_by_id():
         try:
             with DBConnection() as cursor:
-                sql = ("SELECT *  from orders  WHERE order_id = %s" % order_id)
-                cursor.execute(sql, (order_id))
+                sql = ("SELECT *  from orders  WHERE order_id = %s" % self.order_id)
+                cursor.execute(sql, (self.order_id))
                 result = cursor.fetchone()
-                print(result)
-                if result:
-                    return result
-                return{"message": "Order not found"}
+                return make_response(result)
         except Exception as e:
             return e
 
     def get_order_history(self):
-        self.user_name = get_data['user_name']
+        data = request.get_json()
+        
         try:
             with DBConnection() as cursor:
+                self.user_name = data['user_name']
                 sql = ("SELECT * FROM orders food_type, user_name, created_timestamp, status where user_name = %s" % self.user_name)
                 cursor.execute(sql, (self.user_name))
                 history = cursor.fetchall()
-                return jsonify(history)
+                return make_response(jsonify({'order-history': history}))
 
         except Exception as e:
             logging.error(e)

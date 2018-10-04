@@ -3,7 +3,7 @@ class MyTables():
 
     def add_tbl_users(self):
         self.table_name = 'users'
-        with self.conn.cursor() as cursor:
+        with DBConnection() as cursor:
             command = ("CREATE TABLE IF NOT EXISTS %s("
                        "user_id serial PRIMARY KEY,"
                        "record_timestamp timestamp default current_timestamp,"
@@ -13,12 +13,11 @@ class MyTables():
                        ");")
 
             cursor.execute(command % self.table_name)
-            self.conn.commit()
             print("Table_users created successfully")
 
     def add_tbl_menu(self):
         self.table_name = 'menu'
-        with self.conn.cursor() as cursor:
+        with DBConnection() as cursor:
             command = ("CREATE TABLE IF NOT EXISTS %s("
                        "menu_id serial PRIMARY KEY,"
                        "record_timestamp timestamp default current_timestamp,"
@@ -26,24 +25,22 @@ class MyTables():
                        "food_amount int not null"
                        ");")
             cursor.execute(command % self.table_name)
-            self.conn.commit()
             print("Table_status created successfully")
 
     def add_tbl_status(self):
         self.table_name = 'Status'
-        with self.conn.cursor() as cursor:
+        with DBConnection() as cursor:
             command = ("CREATE TABLE IF NOT EXISTS %s("
                        "status_id serial PRIMARY KEY,"
                        "record_timestamp timestamp default current_timestamp,"
                        "status_type text not null"
                        ");")
             cursor.execute(command % self.table_name)
-            self.conn.commit()
             print("Table_status created successfully")
 
     def add_tbl_Orders(self):
         self.table_name = 'Orders'
-        with self.conn.cursor() as cursor:
+        with DBConnection() as cursor:
             command = ("CREATE TABLE IF NOT EXISTS %s("
                        "order_id serial PRIMARY KEY,"
                        "created_timestamp timestamp default current_timestamp,"
@@ -53,5 +50,4 @@ class MyTables():
                        "amount int not null"
                        ");")
             cursor.execute(command % self.table_name)
-            self.conn.commit()
             print("Table_status created successfully")
