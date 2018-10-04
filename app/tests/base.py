@@ -1,9 +1,11 @@
 import psycopg2
 import unittest
+from unittest import TestCase
 import json
 from app import app, app_config
 from app.models.users import User
 from app.database.server import DBConnection
+from app.views.orderviews import OnlineRestuarant
 
 
 class BaseTestCase(unittest.TestCase):
@@ -33,17 +35,16 @@ class BaseTestCase(unittest.TestCase):
             cursor.execute("DROP TABLE IF EXISTS menu CASCADE")
             cursor.execute("DROP TABLE IF EXISTS status CASCADE")
     
-    def register_user(self, username, email, password):
+   
+
+    def tearDown(self):
         """
-        Method for registering a user
+        Method to droP tables after the test is run
         """
-        return self.client.post(
-            '/auth/signup',
-            data=json.dumps(dict(
-                username=username,
-                email=email,
-                password=password
-            )
-            ),
-            content_type='application/json'
-        )
+        with DatabaseConnection() as cursor:
+            cursor.execute("DROP TABLE IF EXISTS users CASCADE")
+            cursor.execute("DROP TABLE IF EXISTS orders CASCADE")
+            cursor.execute("DROP TABLE IF EXISTS menu CASCADE")
+            cursor.execute("DROP TABLE IF EXISTS status CASCADE")
+
+     d

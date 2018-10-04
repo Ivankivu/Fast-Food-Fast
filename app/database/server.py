@@ -9,21 +9,21 @@ class DBConnection():
 
     def __enter__(self):
         try:
-            # if app_config['testing']:
-            #     self.conn = psycopg2.connect("dbname = 'test_db', user = 'postgres' host = 'localhost' password = 'andela' port = '5432'")
-            #     self.cursor = self.conn.cursor()
-            #     return self.cursor
-            # else:
-            self.conn = psycopg2.connect("dbname = 'fastfood' user = 'postgres' host = 'localhost' password = 'andela' port = '5432'")
-            
-            self.cursor = self.conn.cursor()
-
-            # tables = MyTables().create_tables()
-            # return tables
+            if app_config['testing']:
+                self.conn = psycopg2.connect("dbname = 'test_db', user = 'postgres' host = 'localhost' password = '30b46f80b9e83ac37a9fca1545fdda836058d1e73f52a7723fb51d77af4dc3a1' port = '5432'")
+                self.cursor = self.conn.cursor()
+                return self.cursor
+            else:
+                self.conn = psycopg2.connect("dbname = 'fastfood' user = 'postgres' host = 'localhost' password = 'andela' port = '5432'")
+                
+                self.cursor = self.conn.cursor()
 
             return self.cursor
         except (Exception, psycopg2.DatabaseError) as error:
             pprint(error)
+            
+            tables = MyTables().create_tables()
+            return tables
             cursor.execute(command % self.table_name)
             self.conn.commit()
             print("Table_orders created successfully")

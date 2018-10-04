@@ -1,12 +1,9 @@
-from flask import Flask, request, jsonify, json, make_response, Response, Blueprint
+from flask import Flask, request, jsonify, json, make_response, Response
 from app.database.server import DBConnection
 from app.models.orders import Order
 from app.models.users import User
 import logging
-
 from app import app
-
-orders = Blueprint('orders', __name__)
 
 
 class OnlineRestuarant():
@@ -27,7 +24,7 @@ class OnlineRestuarant():
 
     @app.route("/users/orders", methods=['POST'])
     def add_order():
-        
+
         response = Order().create_order()
         return response
 

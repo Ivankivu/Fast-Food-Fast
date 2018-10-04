@@ -23,9 +23,12 @@ class Order(object):
 
         try:
             with DBConnection() as cursor:
-                sql = '''INSERT INTO orders(user_name, food_type, qty) VALUES(%s, %s,%s)'''
+                sql = '''
+                INSERT INTO orders(user_name, food_type, qty)
+                 VALUES(%s, %s,%s)'''
                 cursor.execute(sql, (self.user_name, self.food_type, self.qty))
-                return make_response(jsonify({"message": "Successfully registered"}), 201)  
+                return make_response(jsonify(
+                 {"message": "Successfully registered"}), 201)  
 
         except Exception as e:
             logging.error(e)

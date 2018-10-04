@@ -44,7 +44,9 @@ class UserView():
         auth = request.authorization
 
         if auth and auth.user_password == 'user_password':
-            token = jwt.encode({'user_name': auth.user_name, 'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)}, app.config['SECRET_KEY'])
+            token = jwt.encode({'user_name': auth.user_name, 
+            'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)},
+            app.config['SECRET_KEY'])
             return jsonify({'token': token.decode('UTF-8')})
 
         # return make_response(jsonify({'message': 'Login Required'}), 401)
