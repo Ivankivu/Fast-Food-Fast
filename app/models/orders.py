@@ -1,66 +1,36 @@
 from flask import Flask, jsonify, request, make_response
-import flask
 import logging
 from app.database.server import DBConnection
 from app import app
+from app.models.users import User
 
 
-class Order(DBConnection):
+class Order(object):
 
     """new order creation"""
 
-    def create_order(user_name, food_type, qty):
+    def __init__(self, user_name=str, food_type=str, qty=int):
+        self.user_name = user_name
+        self.food_type = food_type
+        self.qty = qty
+
+    def create_order(self):
 
         data = request.get_json()
-        user_name = data['user_name']
-        food_type = data['food_type']
-        qty = data['qty']
+        self.user_name = data['user_name']
+        self.food_type = data['food_type']
+        self.qty = data['qty']
 
         try:
             with DBConnection() as cursor:
-                if request.method == 'GET':
-                    cursor.execute("SELECT distinct food_type, food_price from menu")
-                    menu = cursor.fetchall()
-                return jsonify({"Menu": menu}), 201
-
-                if len(data['user_name']) == 0:
-                    return jsonify({"alert": "insert a food choice"}), 404
-
-                if len(data['food_type']) == 0:
-                    return jsonify({"alret": "food should not be empty"}), 404
-
-                # if (data['qty']) == 0:
-                #     return jsonify({"error": "food should not be empty"}), 404
-
-                if data['user_name'].isspace():
-                    return jsonify({"caution!": "food should not be empt spaces"}), 404
-
-                if data['food_type'].isspace():
-                    return jsonify({"caution!": "food should not be empt spaces"}), 404
-
-                # if data['qty'].isspace():
-                #     return jsonify({"error": "food should not be empt spaces"}), 404
-
-                if not isinstance(data['user_name'], str):
-                    return jsonify({"error": "user_name should be a string"}), 404
-
-                if not isinstance(data['food_type'], str):
-                    return jsonify({"error": "Food type should be a string"}), 404
-                
-                if not isinstance(data['qty'], int):
-                    return jsonify({"error": "Quantity should be integer"}), 404
-
-                if data['food_type'] != cursor.fetchone():
-                    return jsonify({"message": "food_type not avalilable on the menu"}), 404
-                else:
-                    sql = '''INSERT INTO orders(user_name, food_type, qty) VALUES(%s, %s,%s)'''
-                    cursor.execute(sql, (user_name, food_type, qty))
-                return make_response(jsonify({"message": "Order submitted"}), 201)
+                sql = '''INSERT INTO orders(user_name, food_type, qty) VALUES(%s, %s,%s)'''
+                cursor.execute(sql, (self.user_name, self.food_type, self.qty))
+                return make_response(jsonify({"message": "Successfully registered"}), 201)  
 
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
-
+     
     def get_all_orders():
 
         try:
@@ -75,3 +45,44 @@ class Order(DBConnection):
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
+
+    def get_order_by_id():
+        try:
+            with DBConnection() as cursor:
+                sql = ("SELECT *  from orders  WHERE order_id = %s" % order_id)
+                cursor.execute(sql, (order_id))
+                result = cursor.fetchone()
+                print(result)
+                if result:
+                    return result
+                return{"message": "Order not found"}
+        except Exception as e:
+            return e
+
+    def get_order_history(self):
+        self.user_name = get_data['user_name']
+        try:
+            with DBConnection() as cursor:
+                sql = ("SELECT * FROM orders food_type, user_name, created_timestamp, status where user_name = %s" % self.user_name)
+                cursor.execute(sql, (self.user_name))
+                history = cursor.fetchall()
+                return jsonify(history)
+
+        except Exception as e:
+            logging.error(e)
+            return make_response(jsonify({'message': str(e)}), 500)
+
+    def change_order_status():
+        try:
+            with DBConnection() as cursor:
+                cursor.execute("SELECT * FROM orders WHERE order_id = %s AND status = %s", (order_id, status))
+
+                if not cursor.fetchone():
+                    return make_response(jsonify({"message": "Status doesn't exist"}), 400)
+
+                sql = "UPDATE orders SET status_type = %s where status = %s AND qtn_id = %s"
+
+                cursor.execute(sql, [order_id, status])
+                return jsonify({"message": "Reply Edited successfully"})
+        except Exception as e:
+            raise e

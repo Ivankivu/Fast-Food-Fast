@@ -32,7 +32,7 @@ class ProductionConfig(BaseConfig):
     """
     Production configurations
     """
-
+    # DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/fastfood'
     DEBUG = False
 
 

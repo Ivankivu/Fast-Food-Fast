@@ -1,6 +1,8 @@
-from flask import Flask, Response, request
+from flask import Flask, Response, request, Blueprint
 from app.models.menu import MenuModel
 from app import app
+
+# menu = Blueprint('menu', __name__)
 
 
 class FoodMenu():

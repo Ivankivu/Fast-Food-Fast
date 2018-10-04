@@ -1,25 +1,32 @@
-from flask import Flask, jsonify, make_response, request, json
+from flask import Flask, jsonify, make_response, request, json, Blueprint
 import logging
 from app.database.server import DBConnection
 from app.models.users import User
+# from ..controller import UserController
 from app import app
+import jwt
+import datetime
+from functools import wraps
+
+# users = Blueprint('users', __name__)
+
+app.config['SECRET_KEY'] = 'andela'
 
 
-class UserView(User):
+def token_required(f):
+    @wrap(f)
+    def decorated(*args, **kwargs):
+        token = request.args.get('token')
 
-    # @app.route("/", methods=["GET"])
-    # def index():
-    #     return '''
-    #     <div style="text-align:center;"><h2 style="font-size:70px;">
-    #     <span style="color:orange;">Fast Food Fast</span>
-    #      Delivery app -API</h2>
-    #     </div><div style="text-align:center;">
-    #     <a style="margin-top:400px;text-decoration:none;
-    #     border:1px solid orange;border-radius:15px;padding:50px;"
-    #      href="https://fastfood-fast-api-heroku.herokuapp.com/api/v1/">
-    #      next page</a>
-    #     </div>
-    #     '''
+
+class UserView():
+
+    @app.route('/auth/users', methods=['GET'])
+    def getusers():
+        """
+        Return all users
+        """
+        pass
 
     @app.route('/auth/signup', methods=['GET', 'POST'])
     def signup():
@@ -27,18 +34,17 @@ class UserView(User):
         """
         Add an user to the database through the Signup
         """
-        
-        data = request.get_json()
-        user_name = data['user_name']
-        user_email = data['user_email']
-        user_password = data['user_password']
-
-        response = User.adduser(user_name, user_email, user_password)
-        return response
+        users = User().adduser()
+        return make_response(users)
 
     @app.route('/auth/login', methods=['GET', 'POST'])
     def login():
-        """
-        login user
-        """
-        pass
+        """login user"""
+
+        auth = request.authorization
+
+        if auth and auth.user_password == 'user_password':
+            token = jwt.encode({'user_name': auth.user_name, 'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)}, app.config['SECRET_KEY'])
+            return jsonify({'token': token.decode('UTF-8')})
+
+        # return make_response(jsonify({'message': 'Login Required'}), 401)

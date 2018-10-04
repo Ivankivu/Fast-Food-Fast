@@ -1,56 +1,39 @@
-class CreateTables():
+class MyTables():
 
-    def add_tbl_users(self):
-        self.table_name = 'users'
-        with self.conn.cursor() as cursor:
-            command = ("CREATE TABLE IF NOT EXISTS %s("
-                       "user_id serial PRIMARY KEY,"
-                       "record_timestamp timestamp default current_timestamp,"
-                       "user_name text not null,"
-                       "user_email text not null,"
-                       "user_password  varchar(50) not null"
-                       ");")
+    def create_tables(self):
+            """method for creating all tables"""
+            commands = (
+                """CREATE TABLE IF NOT EXISTS users(
+                    user_id SERIAL PRIMARY KEY,
+                    user_name varchar NOT NULL,
+                    user_password varchar NOT NULL,
+                    admin BOOLEAN DEFAULT FALSE
+                )""",
 
-            cursor.execute(command % self.table_name)
-            self.conn.commit()
-            print("Table_users created successfully")
+                """CREATE TABLE IF NOT EXISTS status(
+                    status_id SERIAL PRIMARY KEY,
+                    status_type varchar NOT NULL,
+                    CREATED_TIMESTAMP TEXT NOT NULL DEFAULT TO_CHAR(CURRENT_TIMESTAMP,
+                                                        'YYYY-MM-DD HH:MI:pm')""",
 
-    def add_tbl_menu(self):
-        self.table_name = 'menu'
-        with self.conn.cursor() as cursor:
-            command = ("CREATE TABLE IF NOT EXISTS %s("
-                       "menu_id serial PRIMARY KEY,"
-                       "record_timestamp timestamp default current_timestamp,"
-                       "status_type text not null"
-                       "food_amount int not null"
-                       ");")
-            cursor.execute(command % self.table_name)
-            self.conn.commit()
-            print("Table_status created successfully")
+                """CREATE TABLE IF NOT EXISTS menu(
+                    menu_id SERIAL PRIMARY KEY,
+                    food_type varchar NOT NULL,
+                    food_price INTEGER NOT NULL,
+                    FOREIGN KEY (user_name) REFERENCES users(user_name) ON DELETE CASCADE ON UPDATE CASCADE)""",
 
-    def add_tbl_status(self):
-        self.table_name = 'Status'
-        with self.conn.cursor() as cursor:
-            command = ("CREATE TABLE IF NOT EXISTS %s("
-                       "status_id serial PRIMARY KEY,"
-                       "record_timestamp timestamp default current_timestamp,"
-                       "status_type text not null"
-                       ");")
-            cursor.execute(command % self.table_name)
-            self.conn.commit()
-            print("Table_status created successfully")
+                """CREATE TABLE IF NOT EXISTS orders(
+                    order_id SERIAL PRIMARY KEY,
+                    user_name TEXT NOT NULL,
+                    food_type TEXT NOT NULL,
+                    qty INTEGER NOT NULL,
+                    status varchar NOT NULL,
+                    CREATED_TIMESTAMP TEXT NOT NULL DEFAULT TO_CHAR(CURRENT_TIMESTAMP,
+                                                        'YYYY-MM-DD HH:MI:pm'), 
+                    FOREIGN KEY (user_name) REFERENCES users(user_name) ON DELETE CASCADE ON UPDATE CASCADE,
+                    FOREIGN KEY (food_type) REFERENCES menu(food_type) ON DELETE CASCADE ON UPDATE CASCADE)"""
+            )
 
-    def add_tbl_Orders(self):
-        self.table_name = 'Orders'
-        with self.conn.cursor() as cursor:
-            command = ("CREATE TABLE IF NOT EXISTS %s("
-                       "order_id serial PRIMARY KEY,"
-                       "created_timestamp timestamp default current_timestamp,"
-                       "order_type text not null,"
-                       "user_id int REFERENCES USERS (user_id),"
-                       "status_type  text not null REFERENCES status (status_type),"
-                       "amount int not null"
-                       ");")
-            cursor.execute(command % self.table_name)
-            self.conn.commit()
-            print("Table_status created successfully")
+            for command in commands:
+                print('tables created succesfully')
+                self.cursor.execute(command)
