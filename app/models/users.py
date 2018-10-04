@@ -69,6 +69,29 @@ class User(object):
         sql = '''INSERT INTO  users(user_name, user_email, user_password) VALUES(%s, %s, %s)'''
         try:
             with DBConnection() as cursor:
+                if len(data['user_name']) == 0:
+                    return jsonify({"error": "username should not be empty"}), 404
+
+                if len(data['user_email']) == 0:
+                        return jsonify(
+                            {"error": "email should not be empty"}), 404
+
+                if len(data['user_password']) == 0:
+                        return jsonify(
+                            {"error": "password should not be empty"}), 404
+
+                if data['user_name'].isspace():
+                        return jsonify(
+                            {"error": "username should not be empt spaces"}), 404
+
+                if data['user_email'].isspace():
+                        return jsonify(
+                            {"error": "email should not be empt spaces"}), 404
+
+                if data['user_password'].isspace():
+                        return jsonify(
+                            {"error": "password should not be empt spaces"}), 404
+
                 cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % self.user_email)
                 if cursor.fetchone():
                     return make_response(jsonify({"message": "Email already in use"}), 409)
