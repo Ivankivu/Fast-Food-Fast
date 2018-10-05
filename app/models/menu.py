@@ -3,16 +3,16 @@ import logging
 from app.database.server import DBConnection
 
 
-class MenuModel(DBConnection):
+class MenuModel():
 
     def addnewfood(food_type, food_price):
         data = request.get_json()
         food_type = data['food_type']
         food_price = data['food_price']
 
-        sql = '''INSERT INTO menu(food_type, food_price) VALUES(%s, %s)'''
         try:
             with DBConnection() as cursor:
+                sql = '''INSERT INTO menu(food_type, food_price) VALUES(%s, %s)'''
                 cursor.execute("SELECT * FROM menu WHERE food_type = '%s'" % food_type)
                 cursor.execute(sql, (food_type, food_price))
                 cursor.execute("SELECT * FROM menu WHERE food_type = '%s'" % food_type)
@@ -30,7 +30,6 @@ class MenuModel(DBConnection):
                 cursor.execute(sql)
                 menu = cursor.fetchall()
                 return jsonify(menu)
-
                 # return make_response(jsonify({"message": "Successfully Added to menu"}), 201)
 
         except Exception as e:
