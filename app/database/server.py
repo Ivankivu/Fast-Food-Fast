@@ -11,7 +11,7 @@ class DBConnection():
         try:
             #  self.conn = psycopg2.connect('dbname = 'fastfood' user = 'postgres' host = 'localhost' password = 'andela' port = '5432')
             # #     #dbname = 'fastfood' user = 'postgres' host = 'localhost' password = 'andela' port = '5432
-            self.conn = psycopg2.connect('postgres://hscqqcrrhcgcpn:30b46f80b9e83ac37a9fca1545fdda836058d1e73f52a7723fb51d77af4dc3a1@ec2-54-235-90-0.compute-1.amazonaws.com:5432/d3oceli53i6eg7')
+            self.conn = psycopg2.connect('dbname = 'd3oceli53i6eg7' user = 'hscqqcrrhcgcpn' host = 'ec2-54-235-90-0.compute-1.amazonaws.com' password = '30b46f80b9e83ac37a9fca1545fdda836058d1e73f52a7723fb51d77af4dc3a1' port = '5432')
             self.cursor = self.conn.cursor()
             return self.cursor
             print("Database created successfully")
