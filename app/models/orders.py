@@ -10,6 +10,12 @@ class Order(object):
     """new order creation"""
 
     def __init__(self, user_name=str, food_type=str, qty=int, order_id=int):
+
+        """
+            This method acts as a constructor
+            for our class, its used to initialise class attributes
+        """
+
         self.user_name = user_name
         self.food_type = food_type
         self.qty = qty
@@ -39,34 +45,39 @@ class Order(object):
 
         try:
             with DBConnection() as cursor:
-                sql = "select row_to_json(row) from (SELECT * FROM orders food_type) row;"
+                sql = "SELECT * FROM orders food_type;"
                 cursor.execute(sql)
                 menu = cursor.fetchall()
-                return jsonify(menu)
+                return menu
 
                 # return make_response(jsonify({"message": "Successfully Added to menu"}), 201)
 
         except Exception as e:
             logging.error(e)
-            return make_response(jsonify({'message': str(e)}), 500)
+            return jsonify({'message': str(e)}), 500
 
-    def get_order_by_id():
+    def get_order_by_id(order_id):
         try:
             with DBConnection() as cursor:
-                sql = ("SELECT *  from orders  WHERE order_id = %s" % self.order_id)
-                cursor.execute(sql, (self.order_id))
+                sql = "SELECT *  from orders  WHERE order_id = %s"
+                cursor.execute(sql, order_id)
                 result = cursor.fetchone()
-                return make_response(result)
-        except Exception as e:
-            return e
+                print(result)
+                if result:
+                    return result
+
+                return{"message":"question not found"}
+        except Exception as e: # pragma: no cover
+            return e # pragma: no cover
 
     def get_order_history(self):
+
         data = request.get_json()
         
         try:
             with DBConnection() as cursor:
                 self.user_name = data['user_name']
-                sql = ("SELECT * FROM orders food_type, user_name, created_timestamp, status where user_name = %s" % self.user_name)
+                sql = ("SELECT order_id, food_type, user_name, created_timestamp, status from orders where user_name = %s" % self.user_name)
                 cursor.execute(sql, (self.user_name))
                 history = cursor.fetchall()
                 return make_response(jsonify({'order-history': history}))
@@ -85,7 +96,7 @@ class Order(object):
 
                 sql = "UPDATE orders SET status_type = %s where status = %s AND qtn_id = %s"
 
-                cursor.execute(sql, [order_id, status])
+                cursor.execute(sql, (order_id, status))
                 return jsonify({"message": "Reply Edited successfully"})
         except Exception as e:
             raise e

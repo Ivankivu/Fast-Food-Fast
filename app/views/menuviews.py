@@ -27,11 +27,11 @@ class FoodMenu():
         food_type = data['food_type']
         food_price = data['food_price']
 
-        response = MenuModel().addnewfood(food_type, food_price)
+        response = MenuModel.addnewfood(food_type, food_price)
         return response
 
     @app.route("/menu", methods=['GET'])
     def getmenu():
 
-        response = MenuModel().getmenu()
+        response = MenuModel.getmenu()
         return response

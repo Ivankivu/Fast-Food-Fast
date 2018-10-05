@@ -27,7 +27,7 @@ class UserView():
         Return all users
         """
         content = User().get_all_users()
-        return make_response(content)
+        return content
 
     @app.route('/auth/signup', methods=['GET', 'POST'])
     def signup():
@@ -38,16 +38,15 @@ class UserView():
         users = User().adduser()
         return make_response(users)
 
-    # @app.route('/auth/login', methods=['GET', 'POST'])
-    # def login():
-    #     """login user"""
+    @app.route('/auth/login', methods=['GET', 'POST'])
+    def login():
+        """login user"""
 
-    #     auth = request.authorization
+        auth = request.authorization
 
-    #     if auth and auth.user_password == 'user_password':
-    #         token = jwt.encode({'user_name': auth.user_name, 
-    #         'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)},
-    #         app.config['SECRET_KEY'])
-    #         return jsonify({'token': token.decode('UTF-8')})
+        if auth and auth.user_name or not auth.user_password:
+            token = jwt.encode({'user_name': auth.user_name,'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)},
+            app.config['SECRET_KEY'])
+            return jsonify({'token': token.decode('UTF-8')})
 
-        # return make_response(jsonify({'message': 'Login Required'}), 401)
+        return make_response(jsonify({'message': 'Login Required'}), 401)

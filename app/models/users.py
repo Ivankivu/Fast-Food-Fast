@@ -7,58 +7,59 @@ import re
 
 class User(object):
 
-    def __init__(self, user_name=str, user_email=str, user_password=str):
+    def __init__(self, user_id=int, user_name=str, user_email=str, user_password=str):
         DBConnection.__init__(self)
+        self.user_id = user_id
         self.user_name = user_name
         self.user_email = user_email
         self.user_password = user_password
         
 
-    @property
-    def password(self):
-        return self._password
+    # @property
+    # def password(self):
+    #     return self._password
 
-    @password.setter
-    def password(self, pwd):
-        if not pwd:
-            raise Exception("Field can't be empty")
-        if len(pwd) < 8 or len(pwd) > 12:
-            raise Exception(
-                "Weak password. Password must be 8 characters long")
-        if not re.search(r'[0-9]', pwd):
-            raise Exception(
-                'Weak password. Password should have atleast one integer')
-        if pwd.isupper() or pwd.islower() or pwd.isdigit():
-            raise Exception(
-                'Very Weak password')
-        self._password = pwd
+    # @password.setter
+    # def password(self, pwd):
+    #     if not pwd:
+    #         raise Exception("Field can't be empty")
+    #     if len(pwd) < 8 or len(pwd) > 12:
+    #         raise Exception(
+    #             "Weak password. Password must be 8 characters long")
+    #     if not re.search(r'[0-9]', pwd):
+    #         raise Exception(
+    #             'Weak password. Password should have atleast one integer')
+    #     if pwd.isupper() or pwd.islower() or pwd.isdigit():
+    #         raise Exception(
+    #             'Very Weak password')
+    #     self._password = pwd
 
-    @property
-    def email(self):
-        return self._email
+    # @property
+    # def email(self):
+    #     return self._email
 
-    @email.setter
-    def email(self, value):
-        if not value:
-            raise Exception("Email field can't be empty")
-        if not re.match(r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+$)", value):
-            raise ValueError('Enter Valid Email i.e "example@gmail.com"')
-            self._email = value
+    # @email.setter
+    # def email(self, value):
+    #     if not value:
+    #         raise Exception("Email field can't be empty")
+    #     if not re.match(r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+$)", value):
+    #         raise ValueError('Enter Valid Email i.e "example@gmail.com"')
+    #         self._email = value
 
-    @property
-    def username(self):
-        return self._username
+    # @property
+    # def username(self):
+    #     return self._username
 
-    @username.setter
-    def username(self, value):
-        if not value:
-            raise Exception("Field can't be empty")
-        if len(value) <= 2:
-            raise Exception("Name too short.")
-        if re.compile('[!@#$%^&*:;?><.0-9]').match(value):
-            raise ValueError("Invalid characters")
+    # @username.setter
+    # def username(self, value):
+    #     if not value:
+    #         raise Exception("Field can't be empty")
+    #     if len(value) <= 2:
+    #         raise Exception("Name too short.")
+    #     if re.compile('[!@#$%^&*:;?><.0-9]').match(value):
+    #         raise ValueError("Invalid characters")
 
-        self._user_name = value
+    #     self._user_name = value
 
     def adduser(self):
         data = request.get_json()
@@ -97,21 +98,23 @@ class User(object):
                     return make_response(jsonify({"message": "Email already in use"}), 409)
                 else:
                     cursor.execute(sql, (self.user_name, self.user_email, self.user_password))
-                    cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % self.user_email)
-                return make_response(jsonify({"message": "Successfully registered"}), 201)
+                    response = cursor.execute("SELECT * FROM users WHERE user_email = '%s'" % self.user_email)
+                return make_response(jsonify({"message": "Account Successfully registered"}), 201)
                 
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
 
-    def get_all_users(user_name):
+    def get_all_users():
         try:
             with DBConnection() as cursor:
-                sql = "select row_to_json(row) from (SELECT * FROM users user_name) row;"
+                sql = "select row_to_json(row) from (SELECT * FROM users user_email) row;"
                 cursor.execute(sql)
-                clients = cursor.fetchall()
-                return clients
+                menu = cursor.fetchall()
+                return jsonify(menu)
 
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
+
+    
