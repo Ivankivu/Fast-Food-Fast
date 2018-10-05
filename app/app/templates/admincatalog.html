@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Fast Food Fast-Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content galley="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content galley="IE=edge">
+    <meta name="keywords" lang="en-us" content galley="foods, soft drinks, beverages, salads">
+    <link href="/app/static/css/style.css" rel="stylesheet">
+    <link href="/app/static/css/menu.css" rel="stylesheet">
+    <link href="/app/static/css/admin.css" rel="stylesheet">
+</head>
+<body id="menu">
+    <!--header content galley-->
+    <div class="topnav">
+        <div class="logo">
+            <a href="/app/templates/index.html">
+                <h1>Fast Food Fast</h1>
+            </a>
+        </div>
+        <ul>
+            <li><a class="active" href="/app/templates/login.html">Welcome, Admin</a></li>
+            <li><a href="/app/templates/login.html">Logout</a></li>
+        </ul>
+    </div>
+    <input type="checkbox" id="drawer-toggle" status="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <header>Menu
+    </header>
+    <nav id="drawer">
+        <ul>
+            <li><a class="active" href="/app/templates/admincatalog.html">Catalogue</a></li>
+            <li><a href="/app/templates/admindash.html">View orders</a></li>
+            <li><a href="/app/templates/index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="contain">
+        <aside id="right">
+            <div id="admintable">
+                <table id="data_table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                        <th>Del</th>
+                    </tr>
+                    <tr id="input">
+                            <td><input type="text" id="new_name"></td>
+                            <td><input type="text" id="new_type"></td>
+                            <td><input type="text" id="new_status"></td>
+                            <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                            <td></td>
+                        </tr>
+                    <tr id="row1">
+                        <td id="name_row1">Matooke</td>
+                        <td id="type_row1">India</td>
+                        <td id="status_row1">Available</td>
+                        <td>
+                            <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                            <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('1')">
+                        </td>
+                    </tr>
+                    <tr id="row2">
+                        <td id="name_row2">Pillau</td>
+                        <td id="type_row2">Canada</td>
+                        <td id="status_row2">Available</td>
+                        <td>
+                            <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                            <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('2')">
+                        </td>
+                    </tr>
+                    <tr id="row3">
+                        <td id="name_row3">Chicken</td>
+                        <td id="type_row3">India</td>
+                        <td id="status_row3">Available</td>
+                        <td>
+                            <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                            <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('3')">
+                        </td>
+                    </tr>
+                    <tr id="row4">
+                        <td id="name_row4">Chicken</td>
+                        <td id="type_row4">India</td>
+                        <td id="status_row4">Available</td>
+                        <td>
+                            <input type="button" id="edit_button4" value="Edit" class="edit" onclick="edit_row('4')">
+                            <input type="button" id="save_button4" value="Save" class="save" onclick="save_row('4')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('4')">
+                        </td>
+                    </tr>
+                    <tr id="row5">
+                        <td id="name_row5">Chicken</td>
+                        <td id="type_row5">India</td>
+                        <td id="status_row5">Available</td>
+                        <td>
+                            <input type="button" id="edit_button5" value="Edit" class="edit" onclick="edit_row('5')">
+                            <input type="button" id="save_button5" value="Save" class="save" onclick="save_row('5')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('5')">
+                        </td>
+                    </tr>
+                    <tr id="row6">
+                        <td id="name_row6">Chicken</td>
+                        <td id="type_row6">India</td>
+                        <td id="status_row6">Available</td>
+                        <td>
+                            <input type="button" id="edit_button6" value="Edit" class="edit" onclick="edit_row('6')">
+                            <input type="button" id="save_button6" value="Save" class="save" onclick="save_row('6')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('6')">
+                        </td>
+                    </tr>
+                    <tr id="row7">
+                        <td id="name_row7">Chicken</td>
+                        <td id="type_row7">India</td>
+                        <td id="status_row7">Available</td>
+                        <td>
+                            <input type="button" id="edit_button7" value="Edit" class="edit" onclick="edit_row('7')">
+                            <input type="button" id="save_button7" value="Save" class="save" onclick="save_row('7')">
+                        </td>
+                        <td>
+                            <input type="button"  value="Delete" class="delete" onclick="delete_row('7')">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </aside>
+        <aside id="left">
+            <ul class="verticle-menu">
+                <li>
+                        <ul class="listadd">
+                                <li class="img_bag"><img src="/app/static/img/icons/Home_520px.png"></li>
+                                <li class="tcounts">
+                                    <h5 class="titles">Total Orders</h5>
+                                    <h2 class="count" id="counter">8</h2>
+                                </li>
+                            </ul>
+                </li>
+                <li><a class="active" href="/app/templates/admincatalog.html">Catalogue</a></li>
+                <li><a href="/app/templates/admindash.html">View Orders</a></li>
+            </ul>
+        </aside>
+    </div>
+    <script src="/app/static/js/script.js"></script>
+</body>
+</html>
