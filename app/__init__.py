@@ -8,4 +8,4 @@ app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'andela'
 jwt = JWTManager(app)
 
-app.config.from_object(app_config["development"])
+# app.config.from_object(app_config["development"])

@@ -57,13 +57,11 @@ class Order(object):
     def get_order_by_id(order_id):
         try:
             with DBConnection() as cursor:
-                sql = "SELECT * FROM orders where order_id = %s"
-                cursor.execute(sql, (order_id))
-                menu = cursor.fetchone()
-                print(menu)
-                if menu:
-                    return menu
-                return{"message": "order not found"}
+               
+                sql = "select row_to_json(row) from (SELECT * FROM orders order_id) row;"
+                cursor.execute(sql, (self.order_id))
+                menu = cursor.fetchall()
+                return jsonify(menu)
 
         except Exception as e:
             logging.error(e)

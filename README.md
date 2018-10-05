@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Ivankivu/Fast-Food-Fast.svg?branch=user-sign-in%2Fout)](https://travis-ci.org/Ivankivu/Fast-Food-Fast) | [![Coverage Status](https://coveralls.io/repos/github/Ivankivu/Fast-Food-Fast/badge.svg?branch=user-sign-in/out)](https://coveralls.io/github/Ivankivu/Fast-Food-Fast?branch=user-sign-in/out)
+[![Build Status](https://travis-ci.org/Ivankivu/Fast-Food-Fast.svg?branch=user-sign-in%2Fout)](https://travis-ci.org/Ivankivu/Fast-Food-Fast) | [![Coverage Status](https://coveralls.io/repos/github/Ivankivu/Fast-Food-Fast/badge.svg)](https://coveralls.io/github/Ivankivu/Fast-Food-Fast)
 
 # Fast-Food-Fast - API
 
