@@ -45,17 +45,19 @@ Run the server At the terminal or console type
 use this sample data to test the API functionality
 
 `{
-    "user_name": "grace",
-    "user_email": "hilvan@livel.com",
-    "user_password": "7654321"
+"food_type": "katogo",
+"food_price": 5000
 }`
 
 # API routes and their actions
 
 | REQUEST | ROUTE | FUNCTIONALITY |
 | ------- | ----- | ------------- |
-| POST | [/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/auth/signup) | Register new user |
-
+| POST | [/api/v2/auth/signup](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/auth/signup) | Register new user |
+| POST | [/api/v2/menu](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/menu) | Add a meal option to the menu |
+| GET | [/api/v2/menu](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/menu) | Get Menu|
+| GET | [/api/v2/users/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/users/orders) | Place an order for food|
+| GET | [/api/v2/users/orders](https://fastfood-fast-api-heroku.herokuapp.com/api/v2/users/orders) | Get all orders|
 
 Use the links in the above table on [Postman](https://www.getpostman.com/apps) to interact with the API
 
