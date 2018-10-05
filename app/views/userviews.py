@@ -8,29 +8,9 @@ import jwt
 import datetime
 from functools import wraps
 from flask_jwt_extended import (
-    JWTManager, jwt_required, create_access_token,
+    jwt_required, create_access_token,
     get_jwt_identity
 )
-
-# users = Blueprint('users', __name__)
-
-app.config['SECRET_KEY'] = 'andela'
-
-
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        token = request.args.get('token')
-
-        if not token:
-            return jsonify({'message': 'Token is missing'}), 403
-
-        try:
-            data = jwt.decode(token, app.cofig['SECRET_KEY'])
-        except:
-            return jsonify({'message': 'Token is invalid'}), 403
-        return f(*args, **kwargs)
-    return decorated
 
 
 class UserView():
