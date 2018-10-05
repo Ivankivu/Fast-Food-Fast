@@ -14,14 +14,25 @@ app.config['SECRET_KEY'] = 'andela'
 
 
 def token_required(f):
-    @wrap(f)
+    @wraps(f)
     def decorated(*args, **kwargs):
         token = request.args.get('token')
+
+        if not token:
+            return jsonify({'message': 'Token is missing'}), 403
+
+        try:
+            data = jwt.decode(token, app.cofig['SECRET_KEY'])
+        except:
+            return jsonify({'message': 'Token is invalid'}), 403
+        return f(*args, **kwargs)
+    return decorated
 
 
 class UserView():
 
     @app.route('/auth/users', methods=['GET'])
+    @token_required
     def getusers():
         """
         Return all users
@@ -44,9 +55,8 @@ class UserView():
 
         auth = request.authorization
 
-        if auth and auth.user_name or not auth.user_password:
-            token = jwt.encode({'user_name': auth.user_name,'exp': datatime.datetime.utcnow() + datetime.timedelta(minutes=5)},
-            app.config['SECRET_KEY'])
+        if auth and auth.password == 'user_password':
+            token = jwt.encode({'user': auth.username,'exp': datatime.datetime.utcnow() + datetime.timedelta(hour=6)}, app.config['SECRET_KEY'])
             return jsonify({'token': token.decode('UTF-8')})
+        return make_response('Could not verify', 401, {'www-Authenticate': 'Basic realm="Login Required"'})
 
-        return make_response(jsonify({'message': 'Login Required'}), 401)

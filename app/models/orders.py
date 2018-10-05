@@ -15,7 +15,7 @@ class Order(object):
             This method acts as a constructor
             for our class, its used to initialise class attributes
         """
-
+        DBConnection.__init__(self)
         self.user_name = user_name
         self.food_type = food_type
         self.qty = qty
@@ -50,8 +50,6 @@ class Order(object):
                 menu = cursor.fetchall()
                 return menu
 
-                # return make_response(jsonify({"message": "Successfully Added to menu"}), 201)
-
         except Exception as e:
             logging.error(e)
             return jsonify({'message': str(e)}), 500
@@ -59,16 +57,14 @@ class Order(object):
     def get_order_by_id(order_id):
         try:
             with DBConnection() as cursor:
-                sql = "SELECT *  from orders  WHERE order_id = %s"
-                cursor.execute(sql, order_id)
-                result = cursor.fetchone()
-                print(result)
-                if result:
-                    return result
+                sql = "select row_to_json(row) from (SELECT * FROM users user_email) row;"
+                cursor.execute(sql)
+                menu = cursor.fetchall()
+                return jsonify(menu)
 
-                return{"message":"question not found"}
-        except Exception as e: # pragma: no cover
-            return e # pragma: no cover
+        except Exception as e:
+            logging.error(e)
+            return make_response(jsonify({'message': str(e)}), 500)
 
     def get_order_history(self):
 

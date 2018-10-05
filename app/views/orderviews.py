@@ -21,17 +21,6 @@ class OnlineRestuarant():
          next page</a>
         </div>
         '''
-    def __init__(self, user_name=str, food_type=str, qty=int, order_id=int):
-
-        """
-            This method acts as a constructor
-            for our class, its used to initialise class attributes
-        """
-
-        self.user_name = user_name
-        self.food_type = food_type
-        self.qty = qty
-        self.order_id = order_id
 
     @app.route("/users/orders", methods=['POST'])
     def add_order():

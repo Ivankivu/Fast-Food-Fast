@@ -105,7 +105,7 @@ class User(object):
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
 
-    def get_all_users():
+    def get_all_users(user_email):
         try:
             with DBConnection() as cursor:
                 sql = "select row_to_json(row) from (SELECT * FROM users user_email) row;"
