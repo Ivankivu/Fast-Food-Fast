@@ -7,6 +7,10 @@ from app import app
 import jwt
 import datetime
 from functools import wraps
+from flask_jwt_extended import (
+    JWTManager, jwt_required, create_access_token,
+    get_jwt_identity
+)
 
 # users = Blueprint('users', __name__)
 
@@ -52,11 +56,13 @@ class UserView():
     @app.route('/auth/login', methods=['GET', 'POST'])
     def login():
         """login user"""
+    
 
-        auth = request.authorization
 
-        if auth and auth.password == 'user_password':
-            token = jwt.encode({'user': auth.username,'exp': datatime.datetime.utcnow() + datetime.timedelta(hour=6)}, app.config['SECRET_KEY'])
-            return jsonify({'token': token.decode('UTF-8')})
-        return make_response('Could not verify', 401, {'www-Authenticate': 'Basic realm="Login Required"'})
+        # auth = request.authorization
+
+        # if auth and auth.password == 'user_password':
+        #     token = jwt.encode({'user': auth.username,'exp': datatime.datetime.utcnow() + datetime.timedelta(hour=6)}, app.config['SECRET_KEY'])
+        #     return jsonify({'token': token.decode('UTF-8')})
+        # return make_response('Could not verify', 401, {'www-Authenticate': 'Basic realm="Login Required"'})
 

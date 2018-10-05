@@ -40,7 +40,7 @@ class OnlineRestuarant():
         response = Order.get_order_by_id(order_id)
         # if not response:
         #     return jsonify({"message": "No order found"}), 404
-        return jsonify({"Order":response})
+        return jsonify({"Order": response})
 
     @app.route("/users/orders/<user_name>", methods=["GET"])
     def order_history(user_name):

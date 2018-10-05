@@ -1,17 +1,11 @@
 from flask import Flask
 from app.models import users
-# Register blueprint(s)
-# from app.views.userviews import users
-# from app.views.orderviews import orders
-# from app.views.menuviews import menu
-
+from flask_jwt_extended import (JWTManager, jwt_required, create_access_token,
+                                get_jwt_identity)
 
 app = Flask(__name__)
 
-# app.config.from_object(app_config["development"])
+app.config['JWT_SECRET_KEY'] = 'andela'
+jwt = JWTManager(app)
 
-
-# app.register_blueprint(users)
-# app.register_blueprint(menu)
-# app.register_blueprint(orders)
-
+app.config.from_object(app_config["development"])
