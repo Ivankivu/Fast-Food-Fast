@@ -16,7 +16,7 @@ from flask_jwt_extended import (
 class UserView():
 
     @app.route('/auth/users', methods=['GET'])
-    @token_required
+    # @token_required
     def getusers():
         """
         Return all users

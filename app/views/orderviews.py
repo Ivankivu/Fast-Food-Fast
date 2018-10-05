@@ -34,13 +34,12 @@ class OnlineRestuarant():
         response = Order.get_all_orders()
         return jsonify({"Available orders": response})
 
-    @app.route("/orders/<order_id>", methods=['POST', 'GET'])
-    def get_order(order_id):
-
-        response = Order.get_order_by_id(order_id)
-        # if not response:
-        #     return jsonify({"message": "No order found"}), 404
-        return jsonify({"Order": response})
+    @app.route("/orders/<order_id>", methods=['GET'])
+    def get_order():
+        response = Order.get_order_by_id()
+        if response:
+            return jsonify({'message': 'order not found'})
+        return jsonify({"Order": str(response)})
 
     @app.route("/users/orders/<user_name>", methods=["GET"])
     def order_history(user_name):
