@@ -25,30 +25,24 @@ class OnlineRestuarant():
     @app.route("/users/orders", methods=['POST'])
     def add_order():
 
-        response = Order.create_order()
-        return response
+        pass
 
     @app.route("/orders/", methods=["GET"])
     def get_orders():
 
-        response = Order.get_all_orders()
-        return jsonify({"Available orders": response})
+        pass
 
-    @app.route("/orders/<order_id>", methods=['GET'])
+    @app.route("/orders/<int:order_id>", methods=['GET'])
     def get_order():
-        response = Order.get_order_by_id()
-        if response:
-            return jsonify({'message': 'order not found'})
-        return jsonify({"Order": str(response)})
+
+        pass
 
     @app.route("/users/orders/<user_name>", methods=["GET"])
     def order_history(user_name):
 
-        response = Order.get_order_history(user_name)
-        return response
+        pass
 
     @app.route("/users/orders/<order_id>", methods=['PUT'])
     def order_change():
 
-        response = Order.change_order_status()
-        return response
+        pass

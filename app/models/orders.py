@@ -40,7 +40,7 @@ class Order(object):
         except Exception as e:
             logging.error(e)
             return make_response(jsonify({'message': str(e)}), 500)
-     
+
     def get_all_orders():
 
         try:
@@ -57,7 +57,7 @@ class Order(object):
     def get_order_by_id(order_id):
         try:
             with DBConnection() as cursor:
-               
+
                 sql = "select row_to_json(row) from (SELECT * FROM orders order_id) row;"
                 cursor.execute(sql, (self.order_id))
                 menu = cursor.fetchall()

@@ -2,8 +2,6 @@ from flask import Flask, Response, request, Blueprint
 from app.models.menu import MenuModel
 from app import app
 
-# menu = Blueprint('menu', __name__)
-
 
 class FoodMenu():
 
@@ -23,15 +21,8 @@ class FoodMenu():
 
     @app.route("/menu", methods=['POST'])
     def addfood():
-        data = request.get_json()
-        food_type = data['food_type']
-        food_price = data['food_price']
-
-        response = MenuModel.addnewfood(food_type, food_price)
-        return response
+        pass
 
     @app.route("/menu", methods=['GET'])
     def getmenu():
-
-        response = MenuModel.getmenu()
-        return response
+        pass
